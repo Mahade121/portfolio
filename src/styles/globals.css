@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 ::placeholder {
   font-size: 17px;
@@ -12,13 +13,14 @@ header {
   justify-content: space-around;
   align-items: center;
   padding: 15px 50px;
-  position: fixed;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+main {
+  padding: 0px 50px;
+}
 .logo {
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
 }
 .search {
   border-radius: 13px;
@@ -117,6 +119,12 @@ nav ul li:hover::after {
 }
 .down-icon:hover {
   color: #eb8d28;
+}
+.hero-title {
+  font-size: 60px;
+  color: #151513f3;
+}.website-link {
+  color: #8a5318;
 }
 
 @media (min-width: 768px) {
