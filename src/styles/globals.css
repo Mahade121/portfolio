@@ -6,7 +6,8 @@
   font-family: 'Poppins', sans-serif;
 }
 body {
-  background: linear-gradient(to bottom, red, green, purple, blue);
+  color: white;
+  background: linear-gradient(to bottom, purple, blue);
 }
 ::placeholder {
   font-size: 17px;

@@ -54,6 +54,18 @@ export default function home() {
                         <Image src={'/Arfius-vai.png'} width={700} height={500} />
                     </div>
                 </div>
+                <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
             </main>
         </>
     )
