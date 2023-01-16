@@ -1,6 +1,8 @@
 import { IconContext } from 'react-icons';
 import { FiSearch } from 'react-icons/fi';
 import { BsChevronDown } from 'react-icons/bs';
+import Typewriter from 'typewriter-effect';
+import Image from 'next/image';
 
 export default function home() {
     return (
@@ -31,12 +33,29 @@ export default function home() {
             </header>
             <main>
                 <div className="hero-sec">
-                    <h1 className='hero-title'>Hey! I Am <br /> Arfius Al-din</h1>
-                    <p className='bio'>I am the founder and ceo of <span className='website-link'>e-freelancing.com</span> <br /> which is the oldest freelancing website on the internet. So come here and learn to earn.</p>
-                    <button className='know-btn'>Know More</button>
-                    <button className='blog-btn'>Read Blogs</button>
+                    <div className="content">
+                        <h1 className='hero-title'>Hey! I Am <br /> Arfius Al-din</h1>
+                        <div className="detail">
+                            <p className='bio'>I am the founder and ceo of <a href='https://www.e-freelancing.com' target="_blank" className='website-link'>e-freelancing.com</a></p>
+                            <Typewriter
+                                options={{
+                                    strings: ['which is the oldest freelancing website. ', 'So come here and learn to earn'],
+                                    autoStart: true,
+                                    loop: true,
+                                }}
+                            />
+                        </div>
+                        <div className="btn-container">
+                            <button className='hero-btn'>Know More</button>
+                            <button className='hero-btn'>Read Blogs</button>
+                        </div>
+                    </div>
+                    <div className="top-img">
+                        <Image src={'/Arfius-vai.png'} width={700} height={500} />
+                    </div>
                 </div>
             </main>
         </>
     )
 }
+
