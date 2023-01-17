@@ -12,6 +12,10 @@ body {
 ::placeholder {
   font-size: 17px;
 }
+.absolute {
+  position: absolute;
+  width: 100%;
+}
 header {
   display: flex;
   justify-content: space-around;
