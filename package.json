@@ -13,6 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@next/font": "13.1.2",
+    "nasa-particlesjs": "^1.0.0",
     "next": "^13.1.2",
     "particles": "^0.3.1",
     "react": "^18.2.0",
@@ -20,6 +21,7 @@
     "react-icons": "^4.7.1",
     "react-tsparticles": "^2.7.1",
     "tsparticles": "^2.7.1",
+    "tsparticles-preset-snow": "^2.7.1",
     "typewriter-effect": "^2.19.0"
   }
 }

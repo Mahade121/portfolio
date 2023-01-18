@@ -6,8 +6,7 @@
   font-family: 'Poppins', sans-serif;
 }
 body {
-  color: white;
-  background: linear-gradient(to bottom, purple, blue);
+  background: linear-gradient(to bottom, rgb(0, 0, 0), blue);
 }
 ::placeholder {
   font-size: 17px;
@@ -17,6 +16,7 @@ body {
   width: 100%;
 }
 header {
+  color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -130,6 +130,7 @@ nav ul li:hover::after {
 }
 .hero-sec {
   display: flex;
+  color: white;
   justify-content: space-around;
 }
 .content {
@@ -140,9 +141,8 @@ nav ul li:hover::after {
 }
 .hero-title {
   font-size: 60px;
-  color: #151513f3;
 }.website-link {
-  color: #8a5318;
+  color: #f19b3f;
   text-decoration: none;
 }
 .detail {
