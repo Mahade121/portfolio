@@ -3,15 +3,17 @@ import { BsChevronDown } from 'react-icons/bs';
 import Typewriter from 'typewriter-effect';
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function home() {
+
     return (
         <>
-        <Head>
-            <title>Arfius Al-din</title>
-        </Head>
-        {/* <div className="absolute"> */}
-        <header>
+            <Head>
+                <title>Arfius Al-din</title>
+            </Head>
+            {/* <div className="absolute"> */}
+            <header>
                 <div className="logo">
                     <h1>Arfius Al-din</h1>
                 </div>
@@ -55,66 +57,127 @@ export default function home() {
                         </div>
                     </div>
                 </div>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
-                    <h1>hello world</h1>
+
+
+                <div className="latest-blog">
+                    <h1 className='latest-blog-title'>Latest Blog</h1>
+                    <div class="latest-blog-container">
+                        <div class="card">
+                            <div class="card__header">
+                                <Image src="/blockchain-blog.jpeg" alt="card__image" class="card__image" width="1080" height="250" />
+                            </div>
+                            <div class="card__body">
+                                {/* <span class="tag tag-blue">Technology</span> */}
+                                <h5 className='card-date'>January 15, 2023</h5>
+                                <h4 className='card-title'>What's new in 2022 Tech</h4>
+                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                                <div className="tag-footer">
+                                <span class="tag tag-blue">Technology</span>
+                                <span class="tag tag-red">Technology</span>
+                                <span class="tag tag-brown">Technology</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__header">
+                                <Image src="/thumbnail-thanks.jpg" alt="card__image" class="card__image" width="1080" height="250" />
+                            </div>
+                            <div class="card__body">
+                                {/* <span class="tag tag-blue">Technology</span> */}
+                                <h5 className='card-date'>January 15, 2023</h5>
+                                <h4 className='card-title'>What's new in 2022 Tech</h4>
+                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                                <div className="tag-footer">
+                                <span class="tag tag-red">Technology</span>
+                                <span class="tag tag-brown">Technology</span>
+                                <span class="tag tag-blue">Technology</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__header">
+                                <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
+                            </div>
+                            <div class="card__body">
+                                {/* <span class="tag tag-blue">Technology</span> */}
+                                <h5 className='card-date'>January 15, 2023</h5>
+                                <h4 className='card-title'>What's new in 2022 Tech</h4>
+                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                                <div className="tag-footer">
+                                <span class="tag tag-blue">Technology</span>
+                                <span class="tag tag-brown">Technology</span>
+                                <span class="tag tag-red">Technology</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
+                <h1>hello world</h1>
             </main>
         </>
     )
