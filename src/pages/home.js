@@ -36,7 +36,7 @@ export default function home() {
                 </div>
             </header>
             <main>
-                <div className="hero-sec">
+                <div className="hero-sec mb-80">
                     <div className="content">
                         <h1 className='hero-title'>Hey! I Am <br /> Arfius Al-din</h1>
                         <div className="detail">
@@ -50,15 +50,60 @@ export default function home() {
                             />
                         </div>
                         <div className="btn-container">
-                            <button className='hero-btn'>Know More</button>
-                            <button className='hero-btn'>Read Blogs</button>
+                            <button className='know-btn'>Know More</button>
+                            <button className='read-btn'>Read Blogs</button>
                         </div>
                     </div>
-                    <div className="top-img">
-                        <Image src={'/arfius-vaiya.jpg'} width={700} height={500} />
-                    </div>
                 </div>
-                <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
+                    <h1>hello world</h1>
                     <h1>hello world</h1>
                     <h1>hello world</h1>
                     <h1>hello world</h1>
@@ -71,8 +116,8 @@ export default function home() {
                     <h1>hello world</h1>
                     <h1>hello world</h1>
             </main>
-        {/* </div> */}
         </>
     )
 }
+
 
