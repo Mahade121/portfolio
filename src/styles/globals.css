@@ -330,7 +330,7 @@ nav ul li:hover::after {
 @keyframes popupAnimation {
   0% {
     width: 25%;
-    height: 0%;
+    height: 100%;
   }
   50% {
     width: 36%;

@@ -194,6 +194,80 @@ export default function home() {
                     </IconContext.Provider>
                 </div>
 
+                <div className="dreams">
+                    <h1>Dreams To Reality</h1>
+                    <p className='dreams-p'> আপনি এখন কোন ধাপে আটকে আছেন? </p>
+                    <IconContext.Provider
+                        value={{ color: 'white', size: '70px', marginTop: '5px' }}>
+                        <div>
+                            <BiUser />
+                        </div>
+                    </IconContext.Provider>
+
+                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" />
+                    <button className='dream-btn' onClick={() => setBtn1(!btn1)}>Dream</button>
+                    {btn1 && (
+                        <>
+                            <div className="popup-box transform">
+                                <div className="popupbox-content">
+                                    <h4 className='popupbox-title'>Dream</h4>
+                                    <div className="popupbox-btn">
+                                        <button>Demo</button>
+                                        <button>Demo</button>
+                                        <button>Demo</button>
+                                        <button>Demo</button>
+                                        <button>Demo</button>
+                                        <button>Demo</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                    )}
+
+                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" />
+                    <button className='dream-btn' onClick={() => setBtn2(!btn2)}>Goal</button>
+                    {btn2 && (
+                        <>
+                            <div className="popup-box transform">
+                                <h4 className='popupbox-title'>Goal</h4>
+                                <div className="popupbox-btn">
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                </div>
+                            </div>
+                        </>
+                    )}
+
+                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" />
+                    <button className='dream-btn' onClick={() => setBtn3(!btn3)}>Plan</button>
+                    {btn3 && (
+                        <>
+                            <div className="popup-box transform">
+                                <h4 className='popupbox-title'>Plan</h4>
+                                <div className="popupbox-btn">
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                </div>
+                            </div>
+                        </>
+                    )}
+                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" />
+                    <IconContext.Provider
+                        value={{ color: 'white', size: '70px', marginTop: '20px' }}>
+                        <div>
+                            <AiOutlineTrophy />
+                        </div>
+                    </IconContext.Provider>
+                </div>
+
 
 
 
