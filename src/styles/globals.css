@@ -9,6 +9,9 @@ body {
   color: white;
   background: linear-gradient(180deg, #0342e3 0%, #333fa9 15.95%, #7c05b3 53.06%, #07000d 99%);
 }
+.sec-title {
+  text-align: center;
+}
 .mb-80 {
   margin-bottom: 40px;
 }
@@ -28,7 +31,7 @@ header {
   width: 100%;
   position: fixed;
   background-color: rgba(255, 255, 255, .15); 
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(7px);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 main {
@@ -200,6 +203,7 @@ nav ul li:hover::after {
   max-width: 1200px;
   margin-block: 2rem;
   gap: 2rem;
+  margin-bottom: 10%;
 }
 .card {
   display: flex;
@@ -237,27 +241,28 @@ nav ul li:hover::after {
   margin-left: .5em;
 }
 
-.tag-blue {
-  background: #56CCF2;
-background: linear-gradient(to bottom, #2F80ED, #56CCF2);
-  color: #fafafa;
+.tag-purple {
+  background: #e9d6fd;
+  color: #7a54c0;
 }
 
-.tag-brown {
-  background: #D1913C;
-background: linear-gradient(to bottom, #FFD194, #D1913C);
-  color: #fafafa;
+.tag-yellow {
+  background: #fef9c3;
+  color: #8b6944;
 }
 
-.tag-red {
-  background: #cb2d3e;
-background: linear-gradient(to bottom, #ef473a, #cb2d3e);
-  color: #fafafa;
+.tag-green {
+  background: #dcfce7;
+  color: #437056;
 }
 
 .card__body h4 {
   font-size: 1rem;
+  cursor: pointer;
   text-transform: capitalize;
+}
+.card__body h4:hover {
+  color: rgb(59, 55, 55);
 }
 .card-date {
   font-weight: lighter;
@@ -286,6 +291,75 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 }
 .readmore-btn {
   text-decoration: none;
+}
+
+.arrow {
+  margin-top: 20px;
+}
+.dreams {
+  text-align: center;
+}
+.dreams-p {
+  margin-bottom: 60px;
+}
+.dream-btn {
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 30px;
+  padding: 10px 20px;
+  border: 2px solid white;
+  color: white;
+  background-color: transparent;
+}.dream-btn:hover {
+  color: black;
+  transition: 0.3s ease;
+  font-weight: bold;
+  background-color: white;
+}
+
+.popup-box {
+  border-radius: 16px;
+  padding: 30px 20px;
+  width: 36%;
+  margin: auto;
+  color: black;
+  transition-delay: 2s;
+  background-color: white;
+  animation: popupAnimation 900ms ease-in-out forwards;
+}
+@keyframes popupAnimation {
+  0% {
+    width: 25%;
+    height: 0%;
+  }
+  50% {
+    width: 36%;
+    height: 2px;
+  }
+  100% {
+    width: 36%;
+    height: 100%;
+  }
+}
+.popupbox-title {
+  margin-bottom: 20px;
+}
+.popupbox-btn {
+  display: grid;
+  grid-gap: 14px;
+  grid-template-columns: auto auto auto;
+}
+.popupbox-btn button {
+  cursor: pointer;
+  padding: 8px 0px;
+  border-radius: 40px;
+  border: 1px solid black;
+}
+.popupbox-btn button:hover {
+  color: white;
+  outline: none;
+  background: rgb(67, 3, 144);
+  transition: all 0.2s ease-in;
 }
 
 @media (min-width: 768px) {
