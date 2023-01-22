@@ -8,6 +8,84 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
+import faker from 'faker';
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+);
+
+ChartJS.defaults.color = '#fff';
+
+const options = {
+    responsive: true,
+    plugins: {
+        legend: {
+            position: 'top',
+        },
+        title: {
+            display: true,
+            text: 'Chart.js Line Chart',
+        },
+    },
+};
+
+const labels = ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024*', '2025*', '2026*'];
+
+const data = {
+    labels,
+    datasets: [
+        {
+            label: 'Number of freelancer',
+            data: [57300000, 59700000, 62200000, 64800000, 70400000, 73300000, 76400000,],
+            borderColor: '#ffb8b8',
+            backgroundColor: '#ffb8b8',
+        }
+    ],
+};
+
+const options2 = {
+    responsive: true,
+    plugins: {
+        legend: {
+            position: 'top',
+        },
+        title: {
+            display: true,
+            text: 'Chart.js Line Chart',
+        },
+    },
+};
+
+
+const data2 = {
+    labels,
+    datasets: [
+        {
+            label: 'Freelancing Industry Size',
+            data: [155000000, 203000000, 253000000, 301000000, 374000000, 503000000, 456800000,],
+            borderColor: '#3ae374',
+            backgroundColor: '#3ae374',
+        }
+    ],
+};
+
 export default function home() {
     const [btn1, setBtn1] = useState(false);
     const [btn2, setBtn2] = useState(false);
@@ -64,6 +142,107 @@ export default function home() {
                     </div>
                 </div>
 
+                <div className="dreams">
+                    <h1>Dreams To Reality</h1>
+                    <p className='dreams-p'> আপনি এখন কোন ধাপে আটকে আছেন? </p>
+                    <IconContext.Provider
+                        value={{ color: 'white', size: '70px', marginTop: '5px' }}>
+                        <div>
+                            <BiUser /><br />
+                        </div>
+                    </IconContext.Provider>
+
+                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                    <button className='dream-btn' onClick={() => setBtn1(!btn1)}>ফ্রিল্যান্সিং কি?</button><br />
+                    {btn1 && (
+                        <>
+                            <br /><div className="popup-box transform">
+                                <div className="popupbox-content">
+                                    <h4 className='popupbox-title'>Information</h4>
+                                    <div className="popupbox-btn">
+                                        <button>Early Life</button>
+                                        <button>Education</button>
+                                        <button>Occupation</button>
+                                        <button>Known For</button>
+                                        <button>Personal Life</button>
+                                        <button>Achivement</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                    )}
+
+                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                    <button className='dream-btn' onClick={() => setBtn2(!btn2)}>ফ্রিল্যান্সিং ও বিশ্ব!</button><br />
+                    {btn2 && (
+                        <>
+                            <br /><div className="popup-box transform">
+                                <h4 className='popupbox-title'>Why Choose E-freelancing</h4>
+                                <div className="popupbox-btn">
+                                    <button></button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                </div>
+                            </div>
+                        </>
+                    )}
+
+                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                    <button className='dream-btn' onClick={() => setBtn3(!btn3)}>ই-ফ্রিল্যান্সিং ডটকমের লক্ষ্য</button><br />
+                    {btn3 && (
+                        <>
+                            <br /><div className="popup-box transform">
+                                <h4 className='popupbox-title'>Plan</h4>
+                                <div className="popupbox-btn">
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                </div>
+                            </div>
+                        </>
+                    )}
+
+                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                    <button className='dream-btn' onClick={() => setBtn3(!btn3)}>ই-ফ্রিল্যান্সিং ডটকমের মাধ্যমে কীভাবে আয় করবো</button><br />
+                    {btn3 && (
+                        <>
+                            <br /><div className="popup-box transform">
+                                <h4 className='popupbox-title'>Plan</h4>
+                                <div className="popupbox-btn">
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                    <button>Demo</button>
+                                </div>
+                            </div>
+                        </>
+                    )}
+
+                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                    <IconContext.Provider
+                        value={{ color: 'white', size: '70px', marginTop: '20px' }}>
+                        <div>
+                            <br /><AiOutlineTrophy /><br />
+                        </div>
+                    </IconContext.Provider>
+                </div>
+
+                <div className="bar-chart">
+                    <div className="freelance-user">
+                        <Line options={options} data={data} />
+                    </div>
+                    <div className="industry-growth">
+                        <Line options={options2} data={data2} />
+                    </div>
+                </div>
 
                 <div className="latest-blog">
                     <h1 className='sec-title'>Latest Blog</h1>
@@ -117,155 +296,6 @@ export default function home() {
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div className="dreams">
-                    <h1>Dreams To Reality</h1>
-                    <p className='dreams-p'> আপনি এখন কোন ধাপে আটকে আছেন? </p>
-                    <IconContext.Provider
-                        value={{ color: 'white', size: '70px', marginTop: '5px' }}>
-                        <div>
-                            <BiUser /><br />
-                        </div>
-                    </IconContext.Provider>
-
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
-                    <button className='dream-btn' onClick={() => setBtn1(!btn1)}>Dream</button><br />
-                    {btn1 && (
-                        <>
-                            <br /><div className="popup-box transform">
-                                <div className="popupbox-content">
-                                    <h4 className='popupbox-title'>Dream</h4>
-                                    <div className="popupbox-btn">
-                                        <button>Demo</button>
-                                        <button>Demo</button>
-                                        <button>Demo</button>
-                                        <button>Demo</button>
-                                        <button>Demo</button>
-                                        <button>Demo</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
-                    <button className='dream-btn' onClick={() => setBtn2(!btn2)}>Goal</button><br />
-                    {btn2 && (
-                        <>
-                            <br /><div className="popup-box transform">
-                                <h4 className='popupbox-title'>Goal</h4>
-                                <div className="popupbox-btn">
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
-                    <button className='dream-btn' onClick={() => setBtn3(!btn3)}>Plan</button><br />
-                    {btn3 && (
-                        <>
-                            <br /><div className="popup-box transform">
-                                <h4 className='popupbox-title'>Plan</h4>
-                                <div className="popupbox-btn">
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                </div>
-                            </div>
-                        </>
-                    )}
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
-                    <IconContext.Provider
-                        value={{ color: 'white', size: '70px', marginTop: '20px' }}>
-                        <div>
-                            <br /><AiOutlineTrophy /><br />
-                        </div>
-                    </IconContext.Provider>
-                </div>
-
-                <div className="dreams">
-                    <h1>Dreams To Reality</h1>
-                    <p className='dreams-p'> আপনি এখন কোন ধাপে আটকে আছেন? </p>
-                    <IconContext.Provider
-                        value={{ color: 'white', size: '70px', marginTop: '5px' }}>
-                        <div>
-                            <BiUser />
-                        </div>
-                    </IconContext.Provider>
-
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" />
-                    <button className='dream-btn' onClick={() => setBtn1(!btn1)}>Dream</button>
-                    {btn1 && (
-                        <>
-                            <div className="popup-box transform">
-                                <div className="popupbox-content">
-                                    <h4 className='popupbox-title'>Dream</h4>
-                                    <div className="popupbox-btn">
-                                        <button>Demo</button>
-                                        <button>Demo</button>
-                                        <button>Demo</button>
-                                        <button>Demo</button>
-                                        <button>Demo</button>
-                                        <button>Demo</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" />
-                    <button className='dream-btn' onClick={() => setBtn2(!btn2)}>Goal</button>
-                    {btn2 && (
-                        <>
-                            <div className="popup-box transform">
-                                <h4 className='popupbox-title'>Goal</h4>
-                                <div className="popupbox-btn">
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" />
-                    <button className='dream-btn' onClick={() => setBtn3(!btn3)}>Plan</button>
-                    {btn3 && (
-                        <>
-                            <div className="popup-box transform">
-                                <h4 className='popupbox-title'>Plan</h4>
-                                <div className="popupbox-btn">
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                </div>
-                            </div>
-                        </>
-                    )}
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" />
-                    <IconContext.Provider
-                        value={{ color: 'white', size: '70px', marginTop: '20px' }}>
-                        <div>
-                            <AiOutlineTrophy />
-                        </div>
-                    </IconContext.Provider>
                 </div>
 
 
