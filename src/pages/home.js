@@ -299,7 +299,45 @@ export default function home() {
                 </div>
 
 
+                <footer>
+                    <button className='talk-btn'>Let's Talk</button>
+                    <div className="footer-middle">
+                        <div className="social-media">
+                            <div className="nav-side">
+                                <div className="about">
+                                    <h2>About</h2>
+                                    <li className='footer-text'>Education</li>
+                                    <li className='footer-text'>Press and News</li>
+                                    <li className='footer-text'>Privacy Policy</li>
+                                    <li className='footer-text'>Terms of service</li>
+                                </div>
+                                <div className="community">
+                                    <h2>Community</h2>
+                                    <li className='footer-text'>Blogs</li>
+                                    <li className='footer-text'>Linkedin</li>
+                                    <li className='footer-text'>Youtube</li>
+                                    <li className='footer-text'>Twitter</li>
+                                </div>
+                                <div className="address">
+                                    <h2>Address</h2>
+                                    <h5 className='footer-text'>35/2, Monipuri Para, Dhaka-1215</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="sub-email">
+                            <h2>Subscribe To email from Arfius</h2>
+                            <input type="text" placeholder='First Name' className='sub-email-inp' /><br />
+                            <input type="text" placeholder='Last Name' className='sub-email-inp' /><br />
+                            <input type="email" placeholder='E-mail' className='sub-email-inp' /><br />
+                            <button className='submit-btn'>Submit</button>
+                        </div>
+                    </div>
+                    <div className="copyright">
+                        <p>©2023 arfiusaldin.com ALL Rights Reserved</p>
+                    </div>
+                </footer>
 
+{/* 
 
 
                 <br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -362,7 +400,7 @@ export default function home() {
                 <h1>hello world</h1>
                 <h1>hello world</h1>
                 <h1>hello world</h1>
-                <h1>hello world</h1>
+                <h1>hello world</h1> */}
             </main>
         </>
     )

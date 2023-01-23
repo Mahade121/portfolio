@@ -190,9 +190,10 @@ nav ul li:hover::after {
 }
 
 .bar-chart {
-  margin-top: 7%;
+  margin-top: 10%;
   display: flex;
   padding: 20px;
+  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.275);
   justify-content: space-around;
 }
@@ -217,9 +218,9 @@ nav ul li:hover::after {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 100%;
   margin-block: 2rem;
-  gap: 2rem;
+  gap: 4rem;
   margin-bottom: 10%;
 }
 .card {
@@ -377,6 +378,88 @@ nav ul li:hover::after {
   outline: none;
   background: rgb(67, 3, 144);
   transition: all 0.2s ease-in;
+}
+
+/* FOOTER */
+footer {
+  padding: 80px 0px;
+}
+.footer-text {
+  color: gray;
+  cursor: pointer;
+  margin-top: 10px;
+}.footer-text:hover {
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+li {
+  list-style: none;
+}
+.talk-btn {
+  font-size: 18px;
+  border-radius: 20px;
+  border: 1px solid yellow;
+  color: yellow;
+  background: transparent;
+  padding: 15px 25px;
+}
+.talk-btn:hover {
+  cursor: pointer;
+  background-color: yellow;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
+.social-media {
+  width: 50%;
+  padding: 40px 20px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+}
+.nav-side {
+  display: flex;
+  padding: 25px 0px;
+  justify-content: space-between;
+}
+.sub-email {
+  width: 50%;
+  padding: 40px 50px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+}
+.sub-email-inp {
+  width: 50%;
+  height: 17%;
+  margin-top: 13px;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-color: #333333;
+}
+.submit-btn {
+  background-color: white;
+  color: black;
+  margin: 20px 0px;
+  border-radius: 40px;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-size: 14px;
+}.submit-btn:hover {
+  color: white;
+  background: transparent;
+  border: 2px solid white;
+  transition: 0.2s ease-in-out;
+}
+.footer-middle {
+  display: flex;
+  margin: 50px 0px;
+  justify-content: space-around;
+}
+.nav-side {
+  display: flex;
+}
+.copyright {
+  text-align: center;
 }
 
 @media (min-width: 768px) {
