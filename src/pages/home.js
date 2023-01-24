@@ -6,7 +6,6 @@ import Typewriter from 'typewriter-effect';
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
 
 import {
     Chart as ChartJS,
@@ -19,7 +18,17 @@ import {
     Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import faker from 'faker';
+
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { Pagination, Navigation } from "swiper";
 
 ChartJS.register(
     CategoryScale,
@@ -246,7 +255,72 @@ export default function home() {
 
                 <div className="latest-blog">
                     <h1 className='sec-title'>Latest Blog</h1>
-                    <div class="latest-blog-container">
+                    {/* <div class="latest-blog-container">
+                        <div class="card">
+                            <div class="card__header">
+                                <Image src="/blockchain-blog.jpeg" alt="card__image" class="card__image" width="1080" height="250" />
+                            </div>
+                            <div class="card__body">
+                                <span class="tag tag-purple">Technology</span>
+                                <h5 className='card-date'>January 15, 2023</h5>
+                                <h4 className='card-title'>What's new in 2022 Tech</h4>
+                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                                <div className="tag-footer">
+                                    <span class="tag tag-purple">Technology</span>
+                                    <span class="tag tag-green">Technology</span>
+                                    <span class="tag tag-yellow">Technology</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__header">
+                                <Image src="/thumbnail-thanks.jpg" alt="card__image" class="card__image" width="1080" height="250" />
+                            </div>
+                            <div class="card__body">
+                                <span class="tag tag-purple">Technology</span>
+                                <h5 className='card-date'>January 15, 2023</h5>
+                                <h4 className='card-title'>What's new in 2022 Tech</h4>
+                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                                <div className="tag-footer">
+                                    <span class="tag tag-green">Technology</span>
+                                    <span class="tag tag-yellow">Technology</span>
+                                    <span class="tag tag-purple">Technology</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__header">
+                                <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
+                            </div>
+                            <div class="card__body">
+                                <span class="tag tag-purple">Technology</span>
+                                <h5 className='card-date'>January 15, 2023</h5>
+                                <h4 className='card-title'>What's new in 2022 Tech</h4>
+                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                                <div className="tag-footer">
+                                    <span class="tag tag-purple">Technology</span>
+                                    <span class="tag tag-yellow">Technology</span>
+                                    <span class="tag tag-green">Technology</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> */}
+                </div>
+
+
+                <Swiper
+                    slidesPerView={3}
+                    spaceBetween={50}
+                    slidesPerGroup={3}
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Pagination]}
+                    className="mySwiper"
+                >
+                    <SwiperSlide>
                         <div class="card">
                             <div class="card__header">
                                 <Image src="/blockchain-blog.jpeg" alt="card__image" class="card__image" width="1080" height="250" />
@@ -263,7 +337,9 @@ export default function home() {
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                    </SwiperSlide>
+                    <SwiperSlide>
+                    <div class="card">
                             <div class="card__header">
                                 <Image src="/thumbnail-thanks.jpg" alt="card__image" class="card__image" width="1080" height="250" />
                             </div>
@@ -279,7 +355,9 @@ export default function home() {
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                    </SwiperSlide>
+                    <SwiperSlide>
+                    <div class="card">
                             <div class="card__header">
                                 <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
                             </div>
@@ -295,9 +373,14 @@ export default function home() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
+                    </SwiperSlide>
+                    <SwiperSlide>Slide 4</SwiperSlide>
+                    <SwiperSlide>Slide 5</SwiperSlide>
+                    <SwiperSlide>Slide 6</SwiperSlide>
+                    <SwiperSlide>Slide 7</SwiperSlide>
+                    <SwiperSlide>Slide 8</SwiperSlide>
+                    <SwiperSlide>Slide 9</SwiperSlide>
+                </Swiper>
 
                 <footer>
                     <button className='talk-btn'>Let's Talk</button>
@@ -337,70 +420,6 @@ export default function home() {
                     </div>
                 </footer>
 
-{/* 
-
-
-                <br /><br /><br /><br /><br /><br /><br /><br /><br />
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1> */}
             </main>
         </>
     )
