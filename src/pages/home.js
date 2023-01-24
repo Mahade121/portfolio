@@ -255,13 +255,12 @@ export default function home() {
 
                 <div className="latest-blog">
                     <h1 className='sec-title'>Latest Blog</h1>
-                    {/* <div class="latest-blog-container">
+                    <div class="latest-blog-container">
                         <div class="card">
                             <div class="card__header">
                                 <Image src="/blockchain-blog.jpeg" alt="card__image" class="card__image" width="1080" height="250" />
                             </div>
                             <div class="card__body">
-                                <span class="tag tag-purple">Technology</span>
                                 <h5 className='card-date'>January 15, 2023</h5>
                                 <h4 className='card-title'>What's new in 2022 Tech</h4>
                                 <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
@@ -277,7 +276,6 @@ export default function home() {
                                 <Image src="/thumbnail-thanks.jpg" alt="card__image" class="card__image" width="1080" height="250" />
                             </div>
                             <div class="card__body">
-                                <span class="tag tag-purple">Technology</span>
                                 <h5 className='card-date'>January 15, 2023</h5>
                                 <h4 className='card-title'>What's new in 2022 Tech</h4>
                                 <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
@@ -293,7 +291,6 @@ export default function home() {
                                 <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
                             </div>
                             <div class="card__body">
-                                <span class="tag tag-purple">Technology</span>
                                 <h5 className='card-date'>January 15, 2023</h5>
                                 <h4 className='card-title'>What's new in 2022 Tech</h4>
                                 <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
@@ -304,83 +301,118 @@ export default function home() {
                                 </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
 
 
-                <Swiper
-                    slidesPerView={3}
-                    spaceBetween={50}
-                    slidesPerGroup={3}
-                    loop={true}
-                    loopFillGroupWithBlank={true}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    modules={[Pagination]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>
-                        <div class="card">
-                            <div class="card__header">
-                                <Image src="/blockchain-blog.jpeg" alt="card__image" class="card__image" width="1080" height="250" />
-                            </div>
-                            <div class="card__body">
-                                {/* <span class="tag tag-purple">Technology</span> */}
-                                <h5 className='card-date'>January 15, 2023</h5>
-                                <h4 className='card-title'>What's new in 2022 Tech</h4>
-                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-                                <div className="tag-footer">
-                                    <span class="tag tag-purple">Technology</span>
-                                    <span class="tag tag-green">Technology</span>
-                                    <span class="tag tag-yellow">Technology</span>
+                <div className="course mt-40">
+                    <h1 className='our-courses-title txt-center'>Visit Our Courses</h1>
+                    <div className="course-cards">
+                        <div className="course-card">
+                            <button className='offline-btn'>Offline</button>
+                            <div className="mx-40">
+                            <div className="course-title">
+                                <div className="course-icon">
+                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                </div>
+                                <div className="course-name">
+                                    <h1>Graphic & <br /> Ui design</h1>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                    <div class="card">
-                            <div class="card__header">
-                                <Image src="/thumbnail-thanks.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-                            </div>
-                            <div class="card__body">
-                                {/* <span class="tag tag-purple">Technology</span> */}
-                                <h5 className='card-date'>January 15, 2023</h5>
-                                <h4 className='card-title'>What's new in 2022 Tech</h4>
-                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-                                <div className="tag-footer">
-                                    <span class="tag tag-green">Technology</span>
-                                    <span class="tag tag-yellow">Technology</span>
-                                    <span class="tag tag-purple">Technology</span>
+                            <div className="course-detail">
+                                <div className="course-detail-content">
+                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                    <h3>Classes: <span className='green-txt'>10</span></h3>
+                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                </div>
+                                <div className="view-course-btn">
+                                    <button className='visit-btn'>Visit Now</button>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                    <div class="card">
-                            <div class="card__header">
-                                <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
                             </div>
-                            <div class="card__body">
-                                {/* <span class="tag tag-purple">Technology</span> */}
-                                <h5 className='card-date'>January 15, 2023</h5>
-                                <h4 className='card-title'>What's new in 2022 Tech</h4>
-                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-                                <div className="tag-footer">
-                                    <span class="tag tag-purple">Technology</span>
-                                    <span class="tag tag-yellow">Technology</span>
-                                    <span class="tag tag-green">Technology</span>
+                        </div>
+                        <div className="course-card">
+                            <button className='offline-btn'>Offline</button>
+                            <div className="mx-40">
+                            <div className="course-title">
+                                <div className="course-icon">
+                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                </div>
+                                <div className="course-name">
+                                    <h1>Graphic & <br /> Ui design</h1>
                                 </div>
                             </div>
+                            <div className="course-detail">
+                                <div className="course-detail-content">
+                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                    <h3>Classes: <span className='green-txt'>10</span></h3>
+                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                </div>
+                                <div className="view-course-btn">
+                                    <button className='visit-btn'>Visit Now</button>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                    </SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-                    <SwiperSlide>Slide 5</SwiperSlide>
-                    <SwiperSlide>Slide 6</SwiperSlide>
-                    <SwiperSlide>Slide 7</SwiperSlide>
-                    <SwiperSlide>Slide 8</SwiperSlide>
-                    <SwiperSlide>Slide 9</SwiperSlide>
-                </Swiper>
+                        <div className="course-card">
+                            <button className='offline-btn'>Offline</button>
+                            <div className="mx-40">
+                            <div className="course-title">
+                                <div className="course-icon">
+                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                </div>
+                                <div className="course-name">
+                                    <h1>Graphic & <br /> Ui design</h1>
+                                </div>
+                            </div>
+                            <div className="course-detail">
+                                <div className="course-detail-content">
+                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                    <h3>Classes: <span className='green-txt'>10</span></h3>
+                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                </div>
+                                <div className="view-course-btn">
+                                    <button className='visit-btn'>Visit Now</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div className="course-card">
+                            <button className='offline-btn'>Offline</button>
+                            <div className="mx-40">
+                            <div className="course-title">
+                                <div className="course-icon">
+                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                </div>
+                                <div className="course-name">
+                                    <h1>Graphic & <br /> Ui design</h1>
+                                </div>
+                            </div>
+                            <div className="course-detail">
+                                <div className="course-detail-content">
+                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                    <h3>Classes: <span className='green-txt'>10</span></h3>
+                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                </div>
+                                <div className="view-course-btn">
+                                    <br /><br /><br />
+                                    <button className='visit-btn'>Visit Now</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div><br /><br /><br />
+                        <button class="view-more-btn" role="button">View More</button>
+
+                    </div>
+                </div>
 
                 <footer>
                     <button className='talk-btn'>Let's Talk</button>

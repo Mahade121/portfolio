@@ -9,11 +9,24 @@ body {
   color: white;
   background: linear-gradient(180deg, #0342e3 0%, #333fa9 15.95%, #7c05b3 53.06%, #07000d 99%);
 }
+.green-txt {
+  font-weight: lighter !important;
+  color: green;
+}
+.txt-center {
+  text-align: center;
+}
 .sec-title {
   text-align: center;
 }
-.mb-80 {
+.mt-40 {
+  margin-top: 40px;
+}
+.mb-40 {
   margin-bottom: 40px;
+}
+.mx-40 {
+  margin: 0px 40px;
 }
 ::placeholder {
   font-size: 17px;
@@ -380,6 +393,102 @@ nav ul li:hover::after {
   transition: all 0.2s ease-in;
 }
 
+/* COURSE CARD */
+.offline-btn {
+  background-color: #ff9900;
+  color: white;
+  font-size: 18px;
+  padding: 6px 20px;
+  border: none;
+  border-radius: 35px 0px 0px;
+}
+.course-cards {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.course-card {
+  margin-top: 35px;
+  padding-bottom: 18px;
+  color: black;
+  border-radius: 35px;
+  background-color: white;
+}
+.course-title {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.course-icon {
+  margin-right: 20px;
+  margin-top: 10px;
+}
+.course-detail {
+  margin-top: 20px;
+  font-weight: lighter !important;
+  display: flex;
+  align-items: flex-end;
+}
+.course-detail-content {
+  font-weight: lighter !important;
+}
+.visit-btn {
+  cursor: pointer;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: #ff9900;
+}
+.visit-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.219) 0px 7px 29px 0px;
+}
+
+.view-more-btn {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 3%;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 20%;
+  will-change: transform;
+}
+
+.view-more-btn:disabled {
+  pointer-events: none;
+}
+
+.view-more-btn:hover {
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.view-more-btn:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
 /* FOOTER */
 footer {
   padding: 80px 0px;
@@ -465,11 +574,10 @@ li {
 }
 
 .swiper {
-  position: absolute !important;
+  position: sticky !important;
   width: 90%;
   height: 90vh;
   padding: 20px 0px;
-  z-index: -1 !important;
   color: black;
 }
 
