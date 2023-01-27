@@ -194,7 +194,7 @@ nav ul li:hover::after {
   display: flex;
   padding: 20px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.275);
+  background-color: rgba(325, 325, 325, 0.374);
   justify-content: space-around;
 }
 .freelance-user {
@@ -431,6 +431,7 @@ li {
 .sub-email-inp {
   width: 50%;
   height: 17%;
+  padding-left: 10px;
   margin-top: 13px;
   border-radius: 10px;
   border: 1px solid white;
@@ -460,6 +461,12 @@ li {
 }
 .copyright {
   text-align: center;
+}
+
+
+.news-section {
+  color: black;
+  background-color: white !important;
 }
 
 @media (min-width: 768px) {
