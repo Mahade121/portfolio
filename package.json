@@ -23,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-tsparticles": "^2.7.1",
+    "swiper": "^8.4.6",
     "tsparticles": "^2.7.1",
     "tsparticles-preset-snow": "^2.7.1",
     "typewriter-effect": "^2.19.0"
