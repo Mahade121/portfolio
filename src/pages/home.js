@@ -6,7 +6,6 @@ import Typewriter from 'typewriter-effect';
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
 
 import {
     Chart as ChartJS,
@@ -19,7 +18,8 @@ import {
     Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import faker from 'faker';
+
+import React, { useRef, useState } from "react";
 
 ChartJS.register(
     CategoryScale,
@@ -252,7 +252,6 @@ export default function home() {
                                 <Image src="/blockchain-blog.jpeg" alt="card__image" class="card__image" width="1080" height="250" />
                             </div>
                             <div class="card__body">
-                                {/* <span class="tag tag-purple">Technology</span> */}
                                 <h5 className='card-date'>January 15, 2023</h5>
                                 <h4 className='card-title'>What's new in 2022 Tech</h4>
                                 <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
@@ -268,7 +267,6 @@ export default function home() {
                                 <Image src="/thumbnail-thanks.jpg" alt="card__image" class="card__image" width="1080" height="250" />
                             </div>
                             <div class="card__body">
-                                {/* <span class="tag tag-purple">Technology</span> */}
                                 <h5 className='card-date'>January 15, 2023</h5>
                                 <h4 className='card-title'>What's new in 2022 Tech</h4>
                                 <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
@@ -284,7 +282,6 @@ export default function home() {
                                 <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
                             </div>
                             <div class="card__body">
-                                {/* <span class="tag tag-purple">Technology</span> */}
                                 <h5 className='card-date'>January 15, 2023</h5>
                                 <h4 className='card-title'>What's new in 2022 Tech</h4>
                                 <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
@@ -299,70 +296,190 @@ export default function home() {
                 </div>
 
 
+                <div className="course mt-40">
+                    <h1 className='our-courses-title txt-center'>Visit Our Courses</h1>
+                    <div className="course-cards">
+                        <div className="course-card">
+                            <button className='offline-btn'>Offline</button>
+                            <div className="mx-40">
+                            <div className="course-title">
+                                <div className="course-icon">
+                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                </div>
+                                <div className="course-name">
+                                    <h1>Graphic & <br /> Ui design</h1>
+                                </div>
+                            </div>
+                            <div className="course-detail">
+                                <div className="course-detail-content">
+                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                    <h3>Classes: <span className='green-txt'>10</span></h3>
+                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                </div>
+                                <div className="view-course-btn">
+                                    <button className='visit-btn'>Visit Now</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div className="course-card">
+                            <button className='offline-btn'>Offline</button>
+                            <div className="mx-40">
+                            <div className="course-title">
+                                <div className="course-icon">
+                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                </div>
+                                <div className="course-name">
+                                    <h1>Graphic & <br /> Ui design</h1>
+                                </div>
+                            </div>
+                            <div className="course-detail">
+                                <div className="course-detail-content">
+                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                    <h3>Classes: <span className='green-txt'>10</span></h3>
+                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                </div>
+                                <div className="view-course-btn">
+                                    <button className='visit-btn'>Visit Now</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div className="course-card">
+                            <button className='offline-btn'>Offline</button>
+                            <div className="mx-40">
+                            <div className="course-title">
+                                <div className="course-icon">
+                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                </div>
+                                <div className="course-name">
+                                    <h1>Graphic & <br /> Ui design</h1>
+                                </div>
+                            </div>
+                            <div className="course-detail">
+                                <div className="course-detail-content">
+                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                    <h3>Classes: <span className='green-txt'>10</span></h3>
+                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                </div>
+                                <div className="view-course-btn">
+                                    <button className='visit-btn'>Visit Now</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div className="course-card">
+                            <button className='offline-btn'>Offline</button>
+                            <div className="mx-40">
+                            <div className="course-title">
+                                <div className="course-icon">
+                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                </div>
+                                <div className="course-name">
+                                    <h1>Graphic & <br /> Ui design</h1>
+                                </div>
+                            </div>
+                            <div className="course-detail">
+                                <div className="course-detail-content">
+                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                    <h3>Classes: <span className='green-txt'>10</span></h3>
+                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                </div>
+                                <div className="view-course-btn">
+                                    <br /><br /><br />
+                                    <button className='visit-btn'>Visit Now</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div><br /><br /><br />
+                    </div>
+                    <div className="view-more-btn-container">
+                        <button class="view-more-btn" role="button">View More</button>
+                    </div>
+                </div>
 
+                <div className="news-section">
+                <h1 className='news-section-title'>News</h1>
+                <div class="news-container">
+                        <div class="news-card">
+                            <div class="news_header">
+                                <Image src="/arfiusaldin-news.jpg" alt="news_image" class="news_image" width="350" height="250" />
+                            </div>
+                            <div class="news_body">
+                                <h5 className='news-date'>January 15, 2023</h5>
+                                <h4 className='news-title'>What's new in 2022 Tech</h4>
+                                <p className='news-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                            </div>
+                        </div>
+                        <div class="news-card">
+                            <div class="news_header">
+                                <Image src="/blockchain-blog.jpeg" alt="news_image" class="news_image" width="350" height="250" />
+                            </div>
+                            <div class="news_body">
+                                <h5 className='news-date'>January 15, 2023</h5>
+                                <h4 className='news-title'>What's new in 2022 Tech</h4>
+                                <p className='news-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                            </div>
+                        </div>
+                        <div class="news-card">
+                            <div class="news_header">
+                                <Image src="/blockchain-blog.jpeg" alt="news_image" class="news_image" width="350" height="250" />
+                            </div>
+                            <div class="news_body">
+                                <h5 className='news-date'>January 15, 2023</h5>
+                                <h4 className='news-title'>What's new in 2022 Tech</h4>
+                                <p className='news-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <footer>
+                    <button className='talk-btn'>Let's Talk</button>
+                    <div className="footer-middle">
+                        <div className="social-media">
+                            <div className="nav-side">
+                                <div className="about">
+                                    <h2>About</h2>
+                                    <li className='footer-text'>Education</li>
+                                    <li className='footer-text'>Press and News</li>
+                                    <li className='footer-text'>Privacy Policy</li>
+                                    <li className='footer-text'>Terms of service</li>
+                                </div>
+                                <div className="community">
+                                    <h2>Community</h2>
+                                    <li className='footer-text'>Blogs</li>
+                                    <li className='footer-text'>Linkedin</li>
+                                    <li className='footer-text'>Youtube</li>
+                                    <li className='footer-text'>Twitter</li>
+                                </div>
+                                <div className="address">
+                                    <h2>Address</h2>
+                                    <h5 className='footer-text'>35/2, Monipuri Para, Dhaka-1215</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="sub-email">
+                            <h2>Subscribe To email from Arfius</h2>
+                            <input type="text" placeholder='First Name' className='sub-email-inp' /><br />
+                            <input type="text" placeholder='Last Name' className='sub-email-inp' /><br />
+                            <input type="email" placeholder='E-mail' className='sub-email-inp' /><br />
+                            <button className='submit-btn'>Submit</button>
+                        </div>
+                    </div>
+                    <div className="copyright">
+                        <p>©2023 arfiusaldin.com ALL Rights Reserved</p>
+                    </div>
+                </footer>
 
-                <br /><br /><br /><br /><br /><br /><br /><br /><br />
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
-                <h1>hello world</h1>
             </main>
         </>
     )
