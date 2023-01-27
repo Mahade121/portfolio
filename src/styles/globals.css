@@ -44,7 +44,7 @@ header {
   width: 100%;
   position: fixed;
   background-color: rgba(255, 255, 255, .15); 
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(9px);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 main {
@@ -512,14 +512,65 @@ nav ul li:hover::after {
   margin: 0px 3%;
   background: white;
 }
-.news-body {
-  padding: 20px;
+.news-card:hover {
+  box-shadow: rgba(255, 255, 255, 0.524) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.809) 0px 50px 100px -20px, rgba(0, 0, 0, 0.032) 0px 30px 60px -30px;
 }
-.news-image {
+.news_body {
+  padding: 25px 20px;
+}
+.news_image {
   width: 100% !important;
   height: 230px;
 }
+.news-date {
+  margin-bottom: 10px;
+}
 
+/* BOOKS SECTION */
+.books-container {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: center;
+}
+.books-section-title {
+  text-align: center;
+  margin: 90px 0px;
+}
+.book-card {
+  cursor: pointer;
+  color: black;
+  margin: 0px 30px;
+  border-radius: 20px;
+  background: white;
+}
+.book-card:hover {
+  box-shadow: rgba(181, 181, 181, 0.25) 0px 40px 50px -12px;
+}
+.book_image {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100% !important;
+}
+.book-body {
+  padding: 20px;
+}
+.buy-now-btn {
+  cursor: pointer;
+  border-radius: 8px;
+  background: #e5c50c;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 15px 30px;
+}
+.book-detail {
+  color: rgb(143, 138, 138);
+}
+.buy-now-btn-wraper {
+  width: 40%;
+  margin: auto;
+}
 
 /* FOOTER */
 footer {
