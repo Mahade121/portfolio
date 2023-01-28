@@ -20,15 +20,6 @@ import {
 import { Line } from 'react-chartjs-2';
 
 import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import { Pagination, Navigation } from "swiper";
 
 ChartJS.register(
     CategoryScale,
@@ -409,9 +400,88 @@ export default function home() {
                                 </div>
                             </div>
                         </div><br /><br /><br />
-                        <button class="view-more-btn" role="button">View More</button>
-
                     </div>
+                    <div className="view-more-btn-container">
+                        <button class="view-more-btn" role="button">View More</button>
+                    </div>
+                </div>
+
+                <div className="news-section">
+                <h1 className='news-section-title'>News & Update</h1>
+                <div class="news-container">
+                        <div class="news-card">
+                            <div class="news_header">
+                                <Image src="/arfiusaldin-news.jpg" alt="news_image" class="news_image" width="400" height="250" />
+                            </div>
+                            <div class="news_body">
+                                <h5 className='news-date'>January 15, 2023</h5>
+                                <h4 className='news-title'>What's new in 2022 Tech</h4>
+                                <p className='news-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                            </div>
+                        </div>
+                        <div class="news-card">
+                            <div class="news_header">
+                                <Image src="/elon-mask.webp" alt="news_image" class="news_image" width="400" height="250" />
+                            </div>
+                            <div class="news_body">
+                                <h5 className='news-date'>January 15, 2023</h5>
+                                <h4 className='news-title'>What's new in 2022 Tech</h4>
+                                <p className='news-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                            </div>
+                        </div>
+                        <div class="news-card">
+                            <div class="news_header">
+                                <Image src="/dollar.webp" alt="news_image" class="news_image" width="400" height="250" />
+                            </div>
+                            <div class="news_body">
+                                <h5 className='news-date'>January 15, 2023</h5>
+                                <h4 className='news-title'>What's new in 2022 Tech</h4>
+                                <p className='news-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="books-section">
+                        <h1 className="books-section-title">Books</h1>
+                        <div className="books-container">
+                            <div className="book-card">
+                                <div className="book-header">
+                                    <Image src="/book1.webp" alt="book_image" class="book_image" width="400" height="400" />
+                                </div>
+                                <div className="book-body">
+                                    <h4 className="book-title">Amusing Graphic Design Handbook</h4><br />
+                                    <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p><br />
+                                    <div className="buy-now-btn-wraper">
+                                        <button className="buy-now-btn">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="book-card">
+                                <div className="book-header">
+                                    <Image src="/book1.webp" alt="book_image" class="book_image" width="400" height="400" />
+                                </div>
+                                <div className="book-body">
+                                    <h4 className="book-title">Amusing Graphic Design Handbook</h4><br />
+                                    <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p><br />
+                                    <div className="buy-now-btn-wraper">
+                                        <button className="buy-now-btn">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="book-card">
+                                <div className="book-header">
+                                    <Image src="/book1.webp" alt="book_image" class="book_image" width="400" height="400" />
+                                </div>
+                                <div className="book-body">
+                                    <h4 className="book-title">Amusing Graphic Design Handbook</h4><br />
+                                    <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p><br />
+                                    <div className="buy-now-btn-wraper">
+                                        <button className="buy-now-btn">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
 
                 <div className="news-section">
