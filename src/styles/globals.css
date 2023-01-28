@@ -565,9 +565,18 @@ nav ul li:hover::after {
 }
 .stories-title {
   text-align: center;
+  margin-bottom: 30px;
 }
 .content-section {
   width: 70%;
+  margin: auto;
+}
+.stories-img-container {
+  display: flex;
+  margin: 30px 0px;
+}
+.stories-img {
+  width: 60% !important;
   margin: auto;
 }
 
@@ -589,6 +598,50 @@ nav ul li:hover::after {
   margin-block: 2rem;
   gap: 4rem;
 }
+
+/* CONTACT PAGE */
+.contact-section {
+  width: 100%;
+  height: 100vh;
+  color: white !important;
+  background: linear-gradient(180deg, #0342e3 0%, #333fa9 15.95%) !important;
+}
+.contactUs-title {
+  margin-bottom: 20px;
+}
+.contact-form-section {
+  height: 90vh;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.contact-form-container {
+  width: 60%;
+  padding: 4% 0px;
+}
+.contact-inp {
+  width: 55%;
+  margin: 10px 0px;
+  padding: 15px 10px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.824);
+}
+.contact-inp:focus {
+  outline: 2px solid #a303e3;
+}
+.send-btn {
+  cursor: pointer;
+  font-size: 20px;
+  padding: 13px 50px;
+  border-radius: 8px;
+  border: none;
+}
+
+
+
 
 /* FOOTER */
 footer {

@@ -40,7 +40,9 @@ export default function stories() {
                         <h1 className='stories-title'>Stories</h1>
                         <p>Arfius Al-din (Bengali: আর্ফিয়াস আল-দ্বীন; 28 December 1996), a Bangladeshi entrepreneur who is the founder of e-freelancing.com (Bengali: ই-ফ্রিল্যান্সিং ডট কম) which is the oldest freelancing website on the internet (ref. Whois). The company motto is “ #Learn_to_Earn.”
                             Everyone tries to make a difference in their lives and help other people. That’s why it makes sense to become an entrepreneur, because not only do you get to establish a business growth, but you can help other people as well. That’s what Arfius Al-din did. He used his passion for IT and fashion to help many people from all over the world express themselves, find new ways to talk about the stuff they like, and truly push their lives to the next level.</p>
-                        <Image src="/arfiusaldin-news.jpg" alt="" width='512' height='320' />
+                        <div className='stories-img-container'>
+                            <Image src="/arfiusaldin-news.jpg" alt="" width='512' height='320' className='stories-img' />
+                        </div>
                         <p><b>Early life and studies</b><br />
                             Arfius Al-din was born in Rajshahi, Bangladesh. Where he lived for six years. When he was a child, his passion was cricket and football, and he did want to become a cricket player. Destiny took him to a new place. He studied at the Dhanmondi Government Boys’ High School, acquiring a B.sc in electrical and electronic engineering. This was the time when Arfius Al-din started pursuing his passion for a career into IT Sector as an Entrepreneur.</p>
                     </div>
