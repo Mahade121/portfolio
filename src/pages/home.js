@@ -311,107 +311,144 @@ export default function home() {
                         <div className="course-card">
                             <button className='offline-btn'>Offline</button>
                             <div className="mx-40">
-                            <div className="course-title">
-                                <div className="course-icon">
-                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
-                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                <div className="course-title">
+                                    <div className="course-icon">
+                                        <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                        <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                    </div>
+                                    <div className="course-name">
+                                        <h1>Graphic & <br /> Ui design</h1>
+                                    </div>
                                 </div>
-                                <div className="course-name">
-                                    <h1>Graphic & <br /> Ui design</h1>
+                                <div className="course-detail">
+                                    <div className="course-detail-content">
+                                        <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                        <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                        <h3>Classes: <span className='green-txt'>10</span></h3>
+                                        <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                    </div>
+                                    <div className="view-course-btn">
+                                        <button className='visit-btn'>Visit Now</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="course-detail">
-                                <div className="course-detail-content">
-                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
-                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
-                                    <h3>Classes: <span className='green-txt'>10</span></h3>
-                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
-                                </div>
-                                <div className="view-course-btn">
-                                    <button className='visit-btn'>Visit Now</button>
-                                </div>
-                            </div>
                             </div>
                         </div>
                         <div className="course-card">
                             <button className='offline-btn'>Offline</button>
                             <div className="mx-40">
-                            <div className="course-title">
-                                <div className="course-icon">
-                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
-                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                <div className="course-title">
+                                    <div className="course-icon">
+                                        <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                        <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                    </div>
+                                    <div className="course-name">
+                                        <h1>Graphic & <br /> Ui design</h1>
+                                    </div>
                                 </div>
-                                <div className="course-name">
-                                    <h1>Graphic & <br /> Ui design</h1>
+                                <div className="course-detail">
+                                    <div className="course-detail-content">
+                                        <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                        <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                        <h3>Classes: <span className='green-txt'>10</span></h3>
+                                        <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                    </div>
+                                    <div className="view-course-btn">
+                                        <button className='visit-btn'>Visit Now</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="course-detail">
-                                <div className="course-detail-content">
-                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
-                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
-                                    <h3>Classes: <span className='green-txt'>10</span></h3>
-                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
-                                </div>
-                                <div className="view-course-btn">
-                                    <button className='visit-btn'>Visit Now</button>
-                                </div>
-                            </div>
                             </div>
                         </div>
                         <div className="course-card">
                             <button className='offline-btn'>Offline</button>
                             <div className="mx-40">
-                            <div className="course-title">
-                                <div className="course-icon">
-                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
-                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                <div className="course-title">
+                                    <div className="course-icon">
+                                        <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                        <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                    </div>
+                                    <div className="course-name">
+                                        <h1>Graphic & <br /> Ui design</h1>
+                                    </div>
                                 </div>
-                                <div className="course-name">
-                                    <h1>Graphic & <br /> Ui design</h1>
+                                <div className="course-detail">
+                                    <div className="course-detail-content">
+                                        <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                        <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                        <h3>Classes: <span className='green-txt'>10</span></h3>
+                                        <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                    </div>
+                                    <div className="view-course-btn">
+                                        <button className='visit-btn'>Visit Now</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="course-detail">
-                                <div className="course-detail-content">
-                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
-                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
-                                    <h3>Classes: <span className='green-txt'>10</span></h3>
-                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
-                                </div>
-                                <div className="view-course-btn">
-                                    <button className='visit-btn'>Visit Now</button>
-                                </div>
-                            </div>
                             </div>
                         </div>
                         <div className="course-card">
                             <button className='offline-btn'>Offline</button>
                             <div className="mx-40">
-                            <div className="course-title">
-                                <div className="course-icon">
-                                    <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
-                                    <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                <div className="course-title">
+                                    <div className="course-icon">
+                                        <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
+                                        <Image src="/ai.png" alt="card__image" width="33" height="33" />
+                                    </div>
+                                    <div className="course-name">
+                                        <h1>Graphic & <br /> Ui design</h1>
+                                    </div>
                                 </div>
-                                <div className="course-name">
-                                    <h1>Graphic & <br /> Ui design</h1>
+                                <div className="course-detail">
+                                    <div className="course-detail-content">
+                                        <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
+                                        <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
+                                        <h3>Classes: <span className='green-txt'>10</span></h3>
+                                        <h3>Seats left: <span className='green-txt'>10</span></h3>
+                                    </div>
+                                    <div className="view-course-btn">
+                                        <br /><br /><br />
+                                        <button className='visit-btn'>Visit Now</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="course-detail">
-                                <div className="course-detail-content">
-                                    <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
-                                    <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
-                                    <h3>Classes: <span className='green-txt'>10</span></h3>
-                                    <h3>Seats left: <span className='green-txt'>10</span></h3>
-                                </div>
-                                <div className="view-course-btn">
-                                    <br /><br /><br />
-                                    <button className='visit-btn'>Visit Now</button>
-                                </div>
-                            </div>
                             </div>
                         </div><br /><br /><br />
                         <button class="view-more-btn" role="button">View More</button>
 
                     </div>
+                </div>
+
+                <div className="news-section">
+                    <div className="news-section-title">
+                        <h1>News</h1>
+                    </div>
+                    <figure class="snip1369 green">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample15.jpg" alt="pr-sample15" />
+                        <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample15.jpg" alt="pr-sample15" /></div>
+                        <figcaption>
+                            <h3>Jason Response</h3>
+                            <p>I suppose if we couldn't laugh at things that don't make sense, we couldn't react to a lot of life.</p>
+                        </figcaption><span class="read-more">
+
+                            Read More <i class="ion-android-arrow-forward"></i></span>
+                        <a href="#"></a>
+                    </figure>
+                    <figure class="snip1369 blue"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample18.jpg" alt="pr-sample18" />
+                        <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample18.jpg" alt="pr-sample18" /></div>
+                        <figcaption>
+                            <h3>Carnegie Mondover</h3>
+                            <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.</p>
+                        </figcaption><span class="read-more">
+
+                            Read More <i class="ion-android-arrow-forward"></i></span>
+                        <a href="#"></a>
+                    </figure>
+                    <figure class="snip1369 orange"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample16.jpg" alt="pr-sample16" />
+                        <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample16.jpg" alt="pr-sample16" /></div>
+                        <figcaption>
+                            <h3>Quiche Hollandaise</h3>
+                            <p>The only skills I have patience to learn are those that have no real application in life.</p>
+                        </figcaption><span class="read-more">
+
+                            Read More <i class="ion-android-arrow-forward"></i></span>
+                        <a href="#"></a>
+                    </figure>
                 </div>
 
                 <footer>
