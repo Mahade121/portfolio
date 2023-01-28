@@ -10,6 +10,10 @@ body {
   color: white;
   background: linear-gradient(180deg, #0342e3 0%, #333fa9 15.95%, #7c05b3 53.06%, #07000d 99%);
 }
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
 .green-txt {
   font-weight: lighter !important;
   color: green;
@@ -447,7 +451,7 @@ nav ul li:hover::after {
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
-  margin-top: 3%;
+  margin-top: 1%;
   min-height: 60px;
   min-width: 0;
   outline: none;
@@ -548,6 +552,42 @@ nav ul li:hover::after {
 .buy-now-btn-wraper {
   width: 40%;
   margin: auto;
+}
+
+/* STORIES */
+.stories-section {
+  width: 100%;
+  color: white;
+  background: linear-gradient(180deg, #0342e3 0%, #333fa9 15.95%) !important;
+}
+.stories-container {
+  padding: 80px 80px;
+}
+.stories-title {
+  text-align: center;
+}
+.content-section {
+  width: 70%;
+  margin: auto;
+}
+
+/* NOTES SECTION */
+.notes-card {
+  display: flex;
+  flex-direction: column;
+  width: clamp(20rem, calc(20rem + 2vw), 22rem);
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  background: #efedec55;
+}
+.latest-notes-container {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-block: 2rem;
+  gap: 4rem;
 }
 
 /* FOOTER */
