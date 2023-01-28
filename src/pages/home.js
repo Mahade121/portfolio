@@ -20,6 +20,7 @@ import {
 import { Line } from 'react-chartjs-2';
 
 import React, { useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
 
 ChartJS.register(
     CategoryScale,
@@ -90,6 +91,21 @@ export default function home() {
     const [btn1, setBtn1] = useState(false);
     const [btn2, setBtn2] = useState(false);
     const [btn3, setBtn3] = useState(false);
+
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_mwtmw4u', 'template_yonuifd', form.current, 'JXgEjXdmo7cxAcJIR')
+            .then((result) => {
+                console.log(result.text);
+                alert("Succefully sent")
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
 
     return (
         <>
@@ -406,9 +422,39 @@ export default function home() {
                     </div>
                 </div>
 
+                <div className="books-section">
+                    <h1 className="books-section-title">Books</h1>
+                    <div className="books-container">
+                        <div className="book-card">
+                            <div className="book-header">
+                                <Image src="/book1.webp" alt="book_image" class="book_image" width="400" height="400" />
+                            </div>
+                            <div className="book-body">
+                                <h4 className="book-title">Amusing Graphic Design Handbook</h4><br />
+                                <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p><br />
+                                <div className="buy-now-btn-wraper">
+                                    <button className="buy-now-btn">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="book-card">
+                            <div className="book-header">
+                                <Image src="/book1.webp" alt="book_image" class="book_image" width="400" height="400" />
+                            </div>
+                            <div className="book-body">
+                                <h4 className="book-title">Amusing Graphic Design Handbook</h4><br />
+                                <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p><br />
+                                <div className="buy-now-btn-wraper">
+                                    <button className="buy-now-btn">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="news-section">
-                <h1 className='news-section-title'>News & Update</h1>
-                <div class="news-container">
+                    <h1 className='news-section-title'>News & Update</h1>
+                    <div class="news-container">
                         <div class="news-card">
                             <div class="news_header">
                                 <Image src="/arfiusaldin-news.jpg" alt="news_image" class="news_image" width="400" height="250" />
@@ -442,85 +488,6 @@ export default function home() {
                     </div>
                 </div>
 
-                <div className="books-section">
-                        <h1 className="books-section-title">Books</h1>
-                        <div className="books-container">
-                            <div className="book-card">
-                                <div className="book-header">
-                                    <Image src="/book1.webp" alt="book_image" class="book_image" width="400" height="400" />
-                                </div>
-                                <div className="book-body">
-                                    <h4 className="book-title">Amusing Graphic Design Handbook</h4><br />
-                                    <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p><br />
-                                    <div className="buy-now-btn-wraper">
-                                        <button className="buy-now-btn">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="book-card">
-                                <div className="book-header">
-                                    <Image src="/book1.webp" alt="book_image" class="book_image" width="400" height="400" />
-                                </div>
-                                <div className="book-body">
-                                    <h4 className="book-title">Amusing Graphic Design Handbook</h4><br />
-                                    <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p><br />
-                                    <div className="buy-now-btn-wraper">
-                                        <button className="buy-now-btn">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="book-card">
-                                <div className="book-header">
-                                    <Image src="/book1.webp" alt="book_image" class="book_image" width="400" height="400" />
-                                </div>
-                                <div className="book-body">
-                                    <h4 className="book-title">Amusing Graphic Design Handbook</h4><br />
-                                    <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p><br />
-                                    <div className="buy-now-btn-wraper">
-                                        <button className="buy-now-btn">Buy Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-
-                <div className="news-section">
-                    <div className="news-section-title">
-                        <h1>News</h1>
-                    </div>
-                    <figure class="snip1369 green">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample15.jpg" alt="pr-sample15" />
-                        <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample15.jpg" alt="pr-sample15" /></div>
-                        <figcaption>
-                            <h3>Jason Response</h3>
-                            <p>I suppose if we couldn't laugh at things that don't make sense, we couldn't react to a lot of life.</p>
-                        </figcaption><span class="read-more">
-
-                            Read More <i class="ion-android-arrow-forward"></i></span>
-                        <a href="#"></a>
-                    </figure>
-                    <figure class="snip1369 blue"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample18.jpg" alt="pr-sample18" />
-                        <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample18.jpg" alt="pr-sample18" /></div>
-                        <figcaption>
-                            <h3>Carnegie Mondover</h3>
-                            <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.</p>
-                        </figcaption><span class="read-more">
-
-                            Read More <i class="ion-android-arrow-forward"></i></span>
-                        <a href="#"></a>
-                    </figure>
-                    <figure class="snip1369 orange"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample16.jpg" alt="pr-sample16" />
-                        <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample16.jpg" alt="pr-sample16" /></div>
-                        <figcaption>
-                            <h3>Quiche Hollandaise</h3>
-                            <p>The only skills I have patience to learn are those that have no real application in life.</p>
-                        </figcaption><span class="read-more">
-
-                            Read More <i class="ion-android-arrow-forward"></i></span>
-                        <a href="#"></a>
-                    </figure>
-                </div>
-
                 <footer>
                     <button className='talk-btn'>Let's Talk</button>
                     <div className="footer-middle">
@@ -548,10 +515,12 @@ export default function home() {
                         </div>
                         <div className="sub-email">
                             <h2>Subscribe To email from Arfius</h2>
-                            <input type="text" placeholder='First Name' className='sub-email-inp' /><br />
-                            <input type="text" placeholder='Last Name' className='sub-email-inp' /><br />
-                            <input type="email" placeholder='E-mail' className='sub-email-inp' /><br />
-                            <button className='submit-btn'>Submit</button>
+                            <form ref={form} onSubmit={sendEmail}>
+                                <input type="text" placeholder='First Name' className='sub-email-inp' name='name' /><br />
+                                <input type="text" placeholder='Last Name' className='sub-email-inp' /><br />
+                                <input type="email" placeholder='E-mail' className='sub-email-inp' name='email' /><br />
+                                <input type="submit" className='submit-btn' value="Send" />
+                            </form>
                         </div>
                     </div>
                     <div className="copyright">
