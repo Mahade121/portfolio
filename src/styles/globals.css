@@ -480,7 +480,11 @@ nav ul li:hover::after {
 /* NEWS SECTION */
 .news-container {
   color: black;
-  display: flex;
+  padding-bottom: 7%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 25px;
+  grid-column-gap: 2px;
   width: 95%;
   margin: auto;
   justify-content: center;
@@ -491,7 +495,7 @@ nav ul li:hover::after {
   margin-bottom: 4%;
 }
 .news-card {
-  margin: 0px 3%;
+  margin: 0px 6%;
   background: white;
 }
 .news-card:hover {
@@ -567,6 +571,9 @@ nav ul li:hover::after {
   text-align: center;
   margin-bottom: 30px;
 }
+.stories-para {
+  text-align: justify;
+}
 .content-section {
   width: 70%;
   margin: auto;
@@ -586,7 +593,6 @@ nav ul li:hover::after {
   flex-direction: column;
   width: clamp(20rem, calc(20rem + 2vw), 22rem);
   overflow: hidden;
-  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1em;
   background: #efedec55;
 }
@@ -598,11 +604,13 @@ nav ul li:hover::after {
   margin-block: 2rem;
   gap: 4rem;
 }
+.notes-page-container {
+  margin-top: 1%;
+}
 
 /* CONTACT PAGE */
 .contact-section {
   width: 100%;
-  height: 100vh;
   color: white !important;
   background: linear-gradient(180deg, #0342e3 0%, #333fa9 15.95%) !important;
 }
@@ -610,9 +618,7 @@ nav ul li:hover::after {
   margin-bottom: 20px;
 }
 .contact-form-section {
-  height: 90vh;
   display: flex;
-  overflow: hidden;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -624,7 +630,7 @@ nav ul li:hover::after {
 .contact-inp {
   width: 55%;
   margin: 10px 0px;
-  padding: 15px 10px;
+  padding: 10px 10px;
   border-radius: 3px;
   border: none;
   background-color: rgba(255, 255, 255, 0.824);
@@ -634,12 +640,92 @@ nav ul li:hover::after {
 }
 .send-btn {
   cursor: pointer;
-  font-size: 20px;
-  padding: 13px 50px;
+  font-size: 17px;
+  padding: 13px 40px;
   border-radius: 8px;
   border: none;
+  color: white;
+  background: black;
 }
 
+/* BOOK PAGE */
+.book-section {
+  width: 100%;
+  color: white !important;
+  background: linear-gradient(180deg, #0342e3 0%, #333fa9 15.95%) !important;
+}
+
+/* NOTES PAGE */
+.notes-container {
+  width: 100%;
+  color: white !important;
+  background: linear-gradient(180deg, #0342e3 0%, #333fa9 15.95%) !important;
+}
+.section-title {
+  margin-top: 2%;
+  text-align: center;
+}
+
+/* NEWS PAGE */
+.news-page {
+  width: 100%;
+  color: white !important;
+  background: linear-gradient(180deg, #0342e3 0%, #333fa9 15.95%) !important;
+}
+.news-view-more-btn-container {
+  width: 13%;
+  margin: auto;
+}
+.news-view-more-btn {
+  display: flex;
+  justify-content: center;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 30% !important;
+  width: 100%;
+}
+.news-view-more-btn:disabled {
+  pointer-events: none;
+}
+.news-view-more-btn:hover {
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+.news-view-more-btn:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+/* BLOG PAGE */
+.latest-blog-container-page {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+}
 
 
 
