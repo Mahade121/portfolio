@@ -817,3 +817,29 @@ li {
     padding: .75rem 1.5rem;
   }
 }
+
+.desktop-navigation {
+  display: flex;
+  align-items: center;
+}
+.mobile-navigation {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    width: 100vw !important;
+  }
+  .desktop-navigation {
+    display: none;
+  }
+  .mobile-navigation {
+    display: block !important;
+  }
+  main {
+    padding: 0px;
+  }
+  .mobile-main-view {
+    width: 100vw;
+  }
+}

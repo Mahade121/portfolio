@@ -2,6 +2,7 @@ import { IconContext } from 'react-icons';
 import { BsChevronDown } from 'react-icons/bs';
 import { BiUser } from 'react-icons/bi';
 import { AiOutlineTrophy } from 'react-icons/ai';
+import { FaBars } from 'react-icons/fa';
 import Typewriter from 'typewriter-effect';
 import Image from 'next/image';
 import Head from 'next/head';
@@ -117,27 +118,37 @@ export default function home() {
                 <div className="logo">
                     <h1>Arfius Al-din</h1>
                 </div>
-                <nav>
-                    <ul>
-                        <li><Link className='nav-link' href={'/home'}>Home</Link></li>
-                        <li><Link className='nav-link' href={'/stories'}>Stories</Link></li>
-                        <li><Link className='nav-link' href={'/notes'}>Notes</Link></li>
-                        <li><Link className='nav-link' href={'/books'}>Blogs</Link></li>
-                        <li><Link className='nav-link' href={'/news'}>News</Link></li>
-                        <li><Link className='nav-link' href={'/contact'}>Contact</Link></li>
-                        <li className='dropdown'><span className='more'>More</span> <IconContext.Provider
-                            value={{ color: 'white', size: '17px', marginTop: '5px' }}>
-                            <div className='down-icon'>
-                                <BsChevronDown />
-                            </div>
-                        </IconContext.Provider></li>
-                    </ul>
-                </nav>
-                <div className='search-input'>
-                    <input type="text" placeholder='search here...' className='search' />
+                <div className="desktop-navigation">
+                    <nav>
+                        <ul>
+                            <li><Link className='nav-link' href={'/home'}>Home</Link></li>
+                            <li><Link className='nav-link' href={'/stories'}>Stories</Link></li>
+                            <li><Link className='nav-link' href={'/notes'}>Notes</Link></li>
+                            <li><Link className='nav-link' href={'/books'}>Blogs</Link></li>
+                            <li><Link className='nav-link' href={'/news'}>News</Link></li>
+                            <li><Link className='nav-link' href={'/contact'}>Contact</Link></li>
+                            <li className='dropdown'><span className='more'>More</span> <IconContext.Provider
+                                value={{ color: 'white', size: '17px', marginTop: '5px' }}>
+                                <div className='down-icon'>
+                                    <BsChevronDown />
+                                </div>
+                            </IconContext.Provider></li>
+                        </ul>
+                    </nav>
+                    <div className='search-input'>
+                        <input type="text" placeholder='search here...' className='search' />
+                    </div>
+                </div>
+                <div className="mobile-navigation">
+                    <IconContext.Provider
+                        value={{ color: 'white', size: '30px'}}>
+                        <div className='bar-icon'>
+                            <FaBars />
+                        </div>
+                    </IconContext.Provider>
                 </div>
             </header>
-            <main>
+            <main className='mobile-main-view'>
                 <div className="hero-sec mb-80">
                     <div className="content">
                         <h1 className='hero-title'>Hey! I Am <br /> Arfius Al-din</h1>
