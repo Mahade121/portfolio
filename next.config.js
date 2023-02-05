@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'arfiusaldin.com',
+        hostname: '127.0.0.1:8000',
         port: '',
         pathname: '/account123/**',
       },

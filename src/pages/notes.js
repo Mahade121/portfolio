@@ -1,10 +1,14 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { IconContext } from 'react-icons';
 import { BsChevronDown } from 'react-icons/bs';
 import Image from 'next/image';
 
 export default function Notes() {
+  const [notes, setNote] = useState([])
+  const getNote = () =>{
+    
+  }
   return (
     <div className='notes-container'>
       <header>

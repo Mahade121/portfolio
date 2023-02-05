@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { IconContext } from 'react-icons';
 import { BsChevronDown } from 'react-icons/bs';
 import { BiUser } from 'react-icons/bi';
 import { AiOutlineTrophy } from 'react-icons/ai';
 import Link from 'next/link';
 import Image from 'next/image';
+import axios from 'axios';
 
 export default function stories() {
+    const [stories , setStories] = useState([])
+    
+    const getStories = () =>{
+        axios.get('http://127.0.0.1:8000/stories/')
+        .then((response) => {
+            const myData = response.data;
+            setStories(myData)
+            console.log(myData)
+        })
+    };
+    useEffect(() => getStories(), []);
+    
     return (
         <>
             <div className="stories-section">
@@ -38,16 +51,17 @@ export default function stories() {
                     <br /><br />
                     <div className="content-section">
                         <h1 className='stories-title'>Stories</h1>
-                        <p className='stories-para'>Arfius Al-din (Bengali: আর্ফিয়াস আল-দ্বীন; 28 December 1996), a Bangladeshi entrepreneur who is the founder of e-freelancing.com (Bengali: ই-ফ্রিল্যান্সিং ডট কম) which is the oldest freelancing website on the internet (ref. Whois). The company motto is “ #Learn_to_Earn.”
-                            Everyone tries to make a difference in their lives and help other people. That’s why it makes sense to become an entrepreneur, because not only do you get to establish a business growth, but you can help other people as well. That’s what Arfius Al-din did. He used his passion for IT and fashion to help many people from all over the world express themselves, find new ways to talk about the stuff they like, and truly push their lives to the next</p>
-                        <div className='stories-img-container'>
-                            <Image src="/arfiusaldin-news.jpg" alt="" width='512' height='320' className='stories-img' />
-                        </div>
-                        <p className='stories-para'><b>Early life and studies</b><br />
-                            Arfius Al-din was born in Rajshahi, Bangladesh. Where he lived for six years. When he was a child, his passion was cricket and football, and he did want to become a cricket player. Destiny took him to a new place. He studied at the Dhanmondi Government Boys’ High School, acquiring a B.sc in electrical and electronic engineering. This was the time when Arfius Al-din started pursuing his passion for a career into IT Sector as an Entrepreneur.</p>
-                        <p>After he started freelancing and making an I.T company that provides tech solutions named ‘Arfius Super Technology Ltd.’  in 2018, he started working with many tech companies that time by facing lots of challenges at the same time and he is actively making a difference by offering businesses some incredible solutions and services.After that, he created a media pr service company named ‘Arfius Collection’ in the same year, and he made many kinds of digital content for others.</p>
-                    </div>
-                    <div className="youtube-section">
+                        {stories.map((s, i) =>{
+                            return(
+                                <>
+                                <p className='stories-para'>{s.description_part1}</p>
+                                <div className='stories-img-container'>
+                                    <Image src={`/{s.image}`}  alt="" width='512' height='320' className='stories-img' />
+                                </div>
+                                <p className='stories-para'>{s.description_part1}</p>
+                                </>
+                            )
+                        })}
 
                     </div>
                 </div>
