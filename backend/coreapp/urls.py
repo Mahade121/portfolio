@@ -5,5 +5,6 @@ router = DefaultRouter()
 
 router.register('stories',StoriesApi,basename='stories')
 router.register('note',NoteApi,basename='note')
+router.register('blog',BlogApi,basename='blog')
 
 urlpatterns = router.urls

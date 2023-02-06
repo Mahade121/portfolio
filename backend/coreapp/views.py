@@ -12,3 +12,8 @@ class StoriesApi(ReadOnlyModelViewSet):
 class NoteApi(ReadOnlyModelViewSet):
     queryset = Note.objects.all().order_by('-id')
     serializer_class = NoteSerializer
+
+
+class BlogApi(ReadOnlyModelViewSet):
+    queryset = Blog.objects.all().order_by('-id')
+    serializer_class = BlogSerializer

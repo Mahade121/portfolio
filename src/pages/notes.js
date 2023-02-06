@@ -1,14 +1,25 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IconContext } from 'react-icons';
 import { BsChevronDown } from 'react-icons/bs';
 import Image from 'next/image';
+import axios from 'axios';
 
 export default function Notes() {
   const [notes, setNote] = useState([])
+
   const getNote = () =>{
-    
-  }
+    axios.get('http://127.0.0.1:8000/note/')
+    .then(
+      (response) =>{
+        const myData = response.data;
+        // console.log(myData)
+        setNote(myData)
+      }
+    )
+  };
+  useEffect(() => getNote(), []);
+  
   return (
     <div className='notes-container'>
       <header>
@@ -20,7 +31,7 @@ export default function Notes() {
             <li><Link className='nav-link' href={'/home'}>Home</Link></li>
             <li><Link className='nav-link' href={'/stories'}>Stories</Link></li>
             <li><Link className='nav-link' href={'/notes'}>Notes</Link></li>
-            <li><Link className='nav-link' href={'/books'}>Blogs</Link></li>
+            <li><Link className='nav-link' href={'/blogs'}>Blogs</Link></li>
             <li><Link className='nav-link' href={'/news'}>News</Link></li>
             <li><Link className='nav-link' href={'/contact'}>Contact</Link></li>
             <div className="dropdown-container">
@@ -35,132 +46,31 @@ export default function Notes() {
       <h1 className="section-title">All Notes</h1>
       <div className="notes-page-container">
         <div class="latest-notes-container">
-          <div class="notes-card">
-            <div class="card__header">
-              <Image src="/blockchain-blog.jpeg" alt="card__image" class="card__image" width="1080" height="250" />
-            </div>
-            <div class="card__body">
-              <h4 className='card-title'>What's new in 2022 Tech</h4>
-              <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-              <div className="tag-footer">
-                <span class="tag tag-purple">Technology</span>
-                <span class="tag tag-yellow">Technology</span>
-                <span class="tag tag-green">Technology</span>
+          {notes.map((c,i) =>{
+            return(
+              <div class="notes-card">
+              <div class="card__header">
+                <Image src={c.image} alt="card__image" class="card__image" width="1080" height="250" />
+              </div>
+              <div class="card__body">
+                <h4 className='card-title'>{c.title}</h4>
+
+                <p className='card-detail' ><span  dangerouslySetInnerHTML={{__html: c.description.slice(0, 200)}}></span>... <span><Link className='readmore-btn' href='#'>Read More</Link></span> </p>
+                <div className="tag-footer">
+                  {
+                  c.tech_name1 == null? null: <span class="tag tag-purple">{c.tech_name1}</span>
+                  }
+                  {
+                  c.tech_name2 == null? null: <span class="tag tag-green">{c.tech_name2}</span>
+                  }
+                  {
+                  c.tech_name3 == null? null: <span class="tag tag-yellow">{c.tech_name3}</span>
+                  }
+                </div>
               </div>
             </div>
-          </div>
-          <div class="notes-card">
-            <div class="card__header">
-              <Image src="/thumbnail-thanks.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-            </div>
-            <div class="card__body">
-              <h4 className='card-title'>What's new in 2022 Tech</h4>
-              <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-              <div className="tag-footer">
-                <span class="tag tag-purple">Technology</span>
-                <span class="tag tag-yellow">Technology</span>
-                <span class="tag tag-green">Technology</span>
-              </div>
-            </div>
-          </div>
-          <div class="notes-card">
-            <div class="card__header">
-              <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-            </div>
-            <div class="card__body">
-              <h4 className='card-title'>What's new in 2022 Tech</h4>
-              <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-              <div className="tag-footer">
-                <span class="tag tag-purple">Technology</span>
-                <span class="tag tag-yellow">Technology</span>
-                <span class="tag tag-green">Technology</span>
-              </div>
-            </div>
-          </div>
-          <div class="notes-card">
-            <div class="card__header">
-              <Image src="/thumbnail-thanks.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-            </div>
-            <div class="card__body">
-              <h4 className='card-title'>What's new in 2022 Tech</h4>
-              <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-              <div className="tag-footer">
-                <span class="tag tag-purple">Technology</span>
-                <span class="tag tag-yellow">Technology</span>
-                <span class="tag tag-green">Technology</span>
-              </div>
-            </div>
-          </div>
-          <div class="notes-card">
-            <div class="card__header">
-              <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-            </div>
-            <div class="card__body">
-              <h4 className='card-title'>What's new in 2022 Tech</h4>
-              <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-              <div className="tag-footer">
-                <span class="tag tag-purple">Technology</span>
-                <span class="tag tag-yellow">Technology</span>
-                <span class="tag tag-green">Technology</span>
-              </div>
-            </div>
-          </div>
-          <div class="notes-card">
-            <div class="card__header">
-              <Image src="/thumbnail-thanks.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-            </div>
-            <div class="card__body">
-              <h4 className='card-title'>What's new in 2022 Tech</h4>
-              <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-              <div className="tag-footer">
-                <span class="tag tag-purple">Technology</span>
-                <span class="tag tag-yellow">Technology</span>
-                <span class="tag tag-green">Technology</span>
-              </div>
-            </div>
-          </div>
-          <div class="notes-card">
-            <div class="card__header">
-              <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-            </div>
-            <div class="card__body">
-              <h4 className='card-title'>What's new in 2022 Tech</h4>
-              <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-              <div className="tag-footer">
-                <span class="tag tag-purple">Technology</span>
-                <span class="tag tag-yellow">Technology</span>
-                <span class="tag tag-green">Technology</span>
-              </div>
-            </div>
-          </div>
-          <div class="notes-card">
-            <div class="card__header">
-              <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-            </div>
-            <div class="card__body">
-              <h4 className='card-title'>What's new in 2022 Tech</h4>
-              <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-              <div className="tag-footer">
-                <span class="tag tag-purple">Technology</span>
-                <span class="tag tag-yellow">Technology</span>
-                <span class="tag tag-green">Technology</span>
-              </div>
-            </div>
-          </div>
-          <div class="notes-card">
-            <div class="card__header">
-              <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-            </div>
-            <div class="card__body">
-              <h4 className='card-title'>What's new in 2022 Tech</h4>
-              <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-              <div className="tag-footer">
-                <span class="tag tag-purple">Technology</span>
-                <span class="tag tag-yellow">Technology</span>
-                <span class="tag tag-green">Technology</span>
-              </div>
-            </div>
-          </div>
+            )
+          })}
         </div>
         <div className="view-more-btn-container">
           <button class="view-more-btn" role="button">View More</button><br /><br /><br />

@@ -32,7 +32,7 @@ export default function stories() {
                             <li><Link className='nav-link' href={'/home'}>Home</Link></li>
                             <li><Link className='nav-link' href={'/stories'}>Stories</Link></li>
                             <li><Link className='nav-link' href={'/notes'}>Notes</Link></li>
-                            <li><Link className='nav-link' href={'/books'}>Blogs</Link></li>
+                            <li><Link className='nav-link' href={'/blogs'}>Blogs</Link></li>
                             <li><Link className='nav-link' href={'/news'}>News</Link></li>
                             <li><Link className='nav-link' href={'/contact'}>Contact</Link></li>
                             <li className='dropdown'><span className='more'>More</span> <IconContext.Provider
@@ -56,7 +56,7 @@ export default function stories() {
                                 <>
                                 <p className='stories-para'>{s.description_part1}</p>
                                 <div className='stories-img-container'>
-                                    <Image src={`/{s.image}`}  alt="" width='512' height='320' className='stories-img' />
+                                    <Image src={s.image}  alt="" width='512' height='320' className='stories-img' />
                                 </div>
                                 <p className='stories-para'>{s.description_part1}</p>
                                 </>

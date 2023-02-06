@@ -15,9 +15,24 @@ class Stories(models.Model):
 
 class Note(models.Model):
     title  = models.CharField(max_length=200)
-    tech_name1  = models.CharField(max_length=50)
-    tech_name2  = models.CharField(max_length=50)
-    tech_name3  = models.CharField(max_length=50)
+    tech_name1  = models.CharField(max_length=50,blank=True, null=True)
+    tech_name2  = models.CharField(max_length=50,blank=True, null=True)
+    tech_name3  = models.CharField(max_length=50,blank=True, null=True)
     description = RichTextUploadingField()
     image       = models.ImageField(upload_to='Note')
 
+
+    def __str__(self):
+        return self.title
+
+class Blog(models.Model):
+    title  = models.CharField(max_length=200)
+    tech_name1  = models.CharField(max_length=50,blank=True, null=True)
+    tech_name2  = models.CharField(max_length=50,blank=True, null=True)
+    tech_name3  = models.CharField(max_length=50,blank=True, null=True)
+    date = models.DateField(auto_now=False, auto_now_add=False)
+    description = RichTextUploadingField()
+    image       = models.ImageField(upload_to='Blog')
+
+    def __str__(self):
+        return self.title 
