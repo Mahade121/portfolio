@@ -30,6 +30,9 @@ body {
 .mb-40 {
   margin-bottom: 40px;
 }
+.mb-20 {
+  margin-bottom: 20px;
+}
 .mx-40 {
   margin: 0px 40px;
 }
@@ -512,6 +515,7 @@ nav ul li:hover::after {
 /* BOOKS SECTION */
 .books-container {
   display: flex;
+  flex-wrap: wrap;
   width: 70%;
   margin: auto;
   justify-content: center;
@@ -879,6 +883,11 @@ li {
   display: none;
 }
 
+/* SOCIAL ICONS */
+.social-icon {
+  cursor: pointer;
+}
+
 
 
 @media (min-width: 768px) {
@@ -940,5 +949,53 @@ li {
   }
   .hamburger {
     display: block;
+  }
+  .contact-form-container {
+    width: 100%;
+  }
+  .view-more-btn-container {
+    width: 30%;
+  }
+  .course-cards {
+    grid-template-columns: auto;
+  }
+  .bar-chart {
+    width: 80%;
+    margin: auto;
+    display: block;
+  }
+  .books-container {
+    row-gap: 30px;
+    width: 80%;
+  }
+  .buy-now-btn {
+    padding: 15px 10px;
+  }
+  .news-container {
+    grid-template-columns: 1fr;
+  }
+  .sub-email, .social-media {
+    border: none;
+    width: 100%;
+  }
+  .nav-side {
+    display: block;
+  }
+  .about, .community, .address {
+    margin-bottom: 20px;
+  }
+  .footer-middle {
+    display: block;
+  }
+  .copyright {
+    padding-top: 30px;
+    border-top: 2px solid white
+  }
+  .social-media-icons {
+    display: flex;
+    width: 45%;
+    margin: auto;
+    padding: 40px 0px;
+    justify-content: space-around;
   }
 }
