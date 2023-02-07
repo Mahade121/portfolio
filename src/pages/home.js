@@ -115,46 +115,8 @@ export default function home() {
                 <title>Arfius Al-din</title>
             </Head>
             {/* <div className="absolute"> */}
-            <header>
-                <div className="logo">
-                    <h1>Arfius Al-din</h1>
-                </div>
-                <div className="desktop-navigation">
-                    <nav>
-                        <ul>
-                            <li><Link className='nav-link' href={'/home'}>Home</Link></li>
-                            <li><Link className='nav-link' href={'/stories'}>Stories</Link></li>
-                            <li><Link className='nav-link' href={'/notes'}>Notes</Link></li>
-                            <li><Link className='nav-link' href={'/blogs'}>Blogs</Link></li>
-                            <li><Link className='nav-link' href={'/news'}>News</Link></li>
-                            <li><Link className='nav-link' href={'/contact'}>Contact</Link></li>
-                            <li className='dropdown'><span className='more'>More</span> <IconContext.Provider
-                                value={{ color: 'white', size: '17px', marginTop: '5px' }}>
-                                <div className='down-icon'>
-                                    <BsChevronDown />
-                                </div>
-                            </IconContext.Provider></li>
-                        </ul>
-                    </nav>
-                    <div className='search-input'>
-                        <input type="text" placeholder='search here...' className='search' />
-                    </div>
-                </div>
-                <div className="mobile-navigation">
-                    <IconContext.Provider
-                        value={{ color: 'white', size: '30px'}}>
-                        <div className='bar-icon'>
-                            <FaBars />
-                        </div>
-                    </IconContext.Provider>
-                </div>
-            </header>
-<<<<<<< HEAD
 
             <Navbar></Navbar>
-
-=======
->>>>>>> 844544c82ba6a64ed82611a4d26f1168090074c2
             <main className='mobile-main-view'>
                 <div className="hero-sec mb-80">
                     <div className="content">

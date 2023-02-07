@@ -5,6 +5,7 @@ import { BiUser } from 'react-icons/bi';
 import { AiOutlineTrophy } from 'react-icons/ai';
 import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
+import Navbar from '@/components/Navbar';
 
 export default function contact() {
   const form = useRef();
@@ -23,30 +24,7 @@ export default function contact() {
   return (
     <>
       <div className="contact-section">
-        <header>
-          <div className="logo">
-            <h1>Arfius Al-din</h1>
-          </div>
-          <nav>
-            <ul>
-              <li><Link className='nav-link' href={'/home'}>Home</Link></li>
-              <li><Link className='nav-link' href={'/stories'}>Stories</Link></li>
-              <li><Link className='nav-link' href={'/notes'}>Notes</Link></li>
-              <li><Link className='nav-link' href={'/blogs'}>Blogs</Link></li>
-              <li><Link className='nav-link' href={'/news'}>News</Link></li>
-              <li><Link className='nav-link' href={'/contact'}>Contact</Link></li>
-              <li className='dropdown'><span className='more'>More</span> <IconContext.Provider
-                value={{ color: 'white', size: '17px', marginTop: '5px' }}>
-                <div className='down-icon'>
-                  <BsChevronDown />
-                </div>
-              </IconContext.Provider></li>
-            </ul>
-          </nav>
-          <div className='search-input'>
-            <input type="text" placeholder='search here...' className='search' />
-          </div>
-        </header>
+        <Navbar></Navbar>
         <br /><br /><br />
         <div className="contact-form-section">
           <div className="contact-form-container">
