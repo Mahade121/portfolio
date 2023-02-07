@@ -821,7 +821,36 @@ li {
   padding: 20px 0px;
   background-color: rgba(255, 255, 255, .15); 
   backdrop-filter: blur(9px);
+  -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
 }
+@-webkit-keyframes zoomIn {
+  from {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+      transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+      opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+.animated {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
 .ph-nav-link {
   color: white;
   text-decoration: none;
@@ -846,6 +875,7 @@ li {
   background-color: #2642af;
 }
 .navigation-menu {
+  transition: 2s ease;
   display: none;
 }
 
@@ -854,9 +884,11 @@ li {
 @media (min-width: 768px) {
   .nav-btn {
     padding: .75rem 1.5rem;
+    transition: transform .2s ease, background-color .5s ease;
   }
   .hamburger {
     display: block;
+    transition: transform .2s ease, background-color .5s ease;
   }
 }
 
@@ -884,11 +916,12 @@ li {
     display: block !important;
   }
   .mobile-nav ul {
-    transition: 2s;
+    position: fixed;
+    transition: 5s ease;
     display: block !important;
   }
   .mobile-nav ul li {
-    transition: 2s;
+    transition: 5s ease;
   }
   .down-icon {
     color: white !important;

@@ -53,7 +53,7 @@ const Navbar = () => {
                     </button>
                 </div>
             </header>
-            <nav className={isNavExpanded ? "mobile-nav" : "navigation-menu"
+            <nav className={isNavExpanded ? "mobile-nav animated zoomIn" : "navigation-menu"
             }>
                 <ul>
                     <li><Link className='ph-nav-link' href={'/home'}>Home</Link></li><br />
