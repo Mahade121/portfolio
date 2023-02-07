@@ -115,7 +115,6 @@ export default function home() {
                 <title>Arfius Al-din</title>
             </Head>
             {/* <div className="absolute"> */}
-<<<<<<< HEAD
             <header>
                 <div className="logo">
                     <h1>Arfius Al-din</h1>
@@ -150,9 +149,6 @@ export default function home() {
                     </IconContext.Provider>
                 </div>
             </header>
-=======
-            <Navbar></Navbar>
->>>>>>> 3d28c8975dc060e0db4036aabe339f8e4fd1c545
             <main className='mobile-main-view'>
                 <div className="hero-sec mb-80">
                     <div className="content">
