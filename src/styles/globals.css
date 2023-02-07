@@ -36,10 +36,6 @@ body {
 ::placeholder {
   font-size: 17px;
 }
-.absolute {
-  position: absolute;
-  width: 100%;
-}
 header {
   color: white;
   display: flex;
@@ -68,14 +64,14 @@ nav ul {
   list-style: none;
   display: flex;
 }
-nav ul li {
+.desk-nav .desk-ul li {
   position: relative;
   margin-right: 40px;
   cursor: pointer;
   font-size: 18px;
   font-family: 'Poppins', sans-serif;
 }
-nav ul li::after {
+.desk-nav .desk-ul li::after {
   content: "";
   position: absolute;
   background-color: #ffffff;
@@ -142,12 +138,13 @@ nav ul li:hover::after {
 }
 .dropdown {
   display: flex;
+  justify-content: center;
 }
 .more {
-  margin-right: 5px
-  ;
+  margin-right: 5px;
 }
 .down-icon {
+  cursor: pointer;
   margin-top: 3px;
 }
 .down-icon:hover {
@@ -812,9 +809,86 @@ li {
 .copyright {
   text-align: center;
 }
+
+/* MOBILE NAV LINKS */
+.mobile-nav {
+  text-align: center;
+  display: none;
+}
+.mobile-nav ul {
+  width: 100% !important;
+  margin: auto;
+  padding: 20px 0px;
+  background-color: rgba(255, 255, 255, .15); 
+  backdrop-filter: blur(9px);
+  -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+@-webkit-keyframes zoomIn {
+  from {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+      transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+      opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+.animated {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+.ph-nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger {
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #283b8b;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+.hamburger:hover {
+  background-color: #2642af;
+}
+.navigation-menu {
+  transition: 2s ease;
+  display: none;
+}
+
+
+
 @media (min-width: 768px) {
   .nav-btn {
     padding: .75rem 1.5rem;
+    transition: transform .2s ease, background-color .5s ease;
+  }
+  .hamburger {
+    display: block;
+    transition: transform .2s ease, background-color .5s ease;
   }
 }
 
@@ -836,10 +910,35 @@ li {
   .mobile-navigation {
     display: block !important;
   }
+  .mobile-nav {
+    padding-top: 15%;
+    width: 100vw !important;
+    display: block !important;
+  }
+  .mobile-nav ul {
+    position: fixed;
+    transition: 5s ease;
+    display: block !important;
+  }
+  .mobile-nav ul li {
+    transition: 5s ease;
+  }
+  .down-icon {
+    color: white !important;
+  }
   main {
     padding: 0px;
   }
   .mobile-main-view {
     width: 100vw;
+  }
+  .dropdown {
+    color: white;
+  }.dropdown:hover {
+    color: white;
+    font-weight: bold;
+  }
+  .hamburger {
+    display: block;
   }
 }
