@@ -149,9 +149,12 @@ export default function home() {
                     </IconContext.Provider>
                 </div>
             </header>
+<<<<<<< HEAD
 
             <Navbar></Navbar>
 
+=======
+>>>>>>> 844544c82ba6a64ed82611a4d26f1168090074c2
             <main className='mobile-main-view'>
                 <div className="hero-sec mb-80">
                     <div className="content">
