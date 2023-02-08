@@ -17,4 +17,14 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
         fields = '__all__'
+
+class NewsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = News
+        fields = '__all__'
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = '__all__'
     

@@ -36,3 +36,23 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title 
+
+
+class News(models.Model):
+    title  = models.CharField(max_length=200)
+    date = models.DateField(auto_now=False, auto_now_add=False)
+    description = RichTextUploadingField()
+    image       = models.ImageField(upload_to='News')
+
+    def __str__(self):
+        return self.title
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=200)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name + ' ' + self.phone

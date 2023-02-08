@@ -18,7 +18,7 @@ const Navbar = () => {
                             <li><Link className='nav-link' href={'/home'}>Home</Link></li>
                             <li><Link className='nav-link' href={'/stories'}>Stories</Link></li>
                             <li><Link className='nav-link' href={'/notes'}>Notes</Link></li>
-                            <li><Link className='nav-link' href={'/books'}>Blogs</Link></li>
+                            <li><Link className='nav-link' href={'/blogs'}>Blogs</Link></li>
                             <li><Link className='nav-link' href={'/news'}>News</Link></li>
                             <li><Link className='nav-link' href={'/contact'}>Contact</Link></li>
                             <li className='dropdown'><span className='more'>More</span> <IconContext.Provider

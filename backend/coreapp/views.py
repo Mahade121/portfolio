@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from coreapp.models import *
 from .serializers import *
-
+from rest_framework import generics
 from rest_framework.viewsets import ReadOnlyModelViewSet
+
 # Create your views here.
 
 class StoriesApi(ReadOnlyModelViewSet):
@@ -17,3 +18,13 @@ class NoteApi(ReadOnlyModelViewSet):
 class BlogApi(ReadOnlyModelViewSet):
     queryset = Blog.objects.all().order_by('-id')
     serializer_class = BlogSerializer
+
+class NewsApi(ReadOnlyModelViewSet):
+    queryset = News.objects.all().order_by('-id')
+    serializer_class = NewsSerializer
+
+
+class ContactApi(generics.CreateAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+    

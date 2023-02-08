@@ -5,3 +5,5 @@ from .models import *
 admin.site.register(Stories)
 admin.site.register(Note)
 admin.site.register(Blog)
+admin.site.register(News)
+admin.site.register(Contact)
