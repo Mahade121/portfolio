@@ -34,7 +34,7 @@ export default function books() {
                                 <div class="card__body">
                                     <h5 className='card-date'>{c.date}</h5>
                                     <h4 className='card-title'>{c.title}</h4>
-                                    <p className='card-detail'><span dangerouslySetInnerHTML={{__html: c.description.slice(0, 200)}}></span><span><Link className='readmore-btn' href='#'>Read More</Link></span> </p>
+                                    <p className='card-detail'><span dangerouslySetInnerHTML={{__html: c.description.slice(0, 200)}}></span><span><Link className='readmore-btn' href={`/blogs/${c.id}`} >Read More</Link></span> </p>
                                     <div className="tag-footer">
 
                                     {
