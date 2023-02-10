@@ -37,7 +37,7 @@ export default function Notes() {
               <div class="card__body">
                 <h4 className='card-title'>{c.title}</h4>
 
-                <p className='card-detail' ><span  dangerouslySetInnerHTML={{__html: c.description.slice(0, 200)}}></span>... <span><Link className='readmore-btn' href='#'>Read More</Link></span> </p>
+                <p className='card-detail' ><span  dangerouslySetInnerHTML={{__html: c.description.slice(0, 200)}}></span>... <span><Link className='readmore-btn' href={`/notes/${c.id}`} >Read More</Link></span> </p>
                 <div className="tag-footer">
                   {
                   c.tech_name1 == null? null: <span class="tag tag-purple">{c.tech_name1}</span>

@@ -36,7 +36,7 @@ export default function news() {
                             <div class="news_body">
                                 <h5 className='news-date'>{c.date}</h5>
                                 <h4 className='news-title'>{c.title}</h4>
-                                <p className='news-detail'><span dangerouslySetInnerHTML={{__html: c.description.slice(0, 200)}}></span><span><Link className='readmore-btn' href='#'>Read More</Link></span> </p>
+                                <p className='news-detail'><span dangerouslySetInnerHTML={{__html: c.description.slice(0, 200)}}></span><span><Link className='readmore-btn'href={`/news/${c.id}`}>Read More</Link></span> </p>
                             </div>
                         </div>
                         )

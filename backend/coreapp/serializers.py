@@ -27,4 +27,35 @@ class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
         fields = '__all__'
+
+
+class DreamCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DreamCategory
+        fields = '__all__'
+    
+class DreamSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Dream
+        fields = '__all__'
+
+class CourseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Course
+        fields = '__all__'
+
+class EducationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Education
+        fields = '__all__'
+
+class TermsOfServiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TermsOfService
+        fields = '__all__'
+
+class PrivacyPolicySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PrivacyPolicy
+        fields = '__all__'
     

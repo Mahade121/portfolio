@@ -56,3 +56,50 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name + ' ' + self.phone
+
+class DreamCategory(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+class Dream(models.Model):
+    category  = models.ForeignKey(DreamCategory, on_delete=models.CASCADE)
+    title  = models.CharField(max_length=200)
+    description = RichTextUploadingField()
+
+    def __str__(self):
+        return self.title
+
+
+class Course(models.Model):
+    title = models.CharField(max_length = 200)
+    image = models.ImageField(upload_to='CourseImage')
+    course_detail_link = models.URLField(unique=True,blank=True,null=True)
+    total_class = models.CharField(max_length = 200,blank=True,null=True)
+    duration = models.CharField(max_length = 200,blank=True,null=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Education(models.Model):
+    title = models.CharField(max_length=200)
+    description = RichTextUploadingField()
+
+    def __str__(self):
+        return self.title
+
+class PrivacyPolicy(models.Model):
+    title = models.CharField(max_length=200)
+    description = RichTextUploadingField()
+
+    def __str__(self):
+        return self.title
+
+class TermsOfService(models.Model):
+    title = models.CharField(max_length=200)
+    description = RichTextUploadingField()
+
+    def __str__(self):
+        return self.title
