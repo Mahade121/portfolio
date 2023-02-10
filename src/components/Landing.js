@@ -26,9 +26,14 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 import Navbar from '@/components/Navbar';
+import axios from 'axios';
+import Notes from '@/pages/notes';
+import { Badge, Col, Container, Row } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 ChartJS.register(
     CategoryScale,
@@ -115,6 +120,77 @@ export default function Landing() {
             });
     };
 
+// DreamCategory
+
+    const [DreamCategory, setDreamCategory] = useState([]);
+
+    const getDreamCategory =()=>{
+        axios.get('http://127.0.0.1:8000/DreamCategory/').then((response) =>{
+            const myData = response.data;
+            setDreamCategory(myData)
+        })
+    };
+    useEffect(()=> getDreamCategory(), []);
+
+// Dream
+
+    const [Dream, setDream] = useState([]);
+
+    const getDream =()=>{
+        axios.get('http://127.0.0.1:8000/Dream/').then((response) =>{
+            const myData = response.data;
+            setDream(myData)
+        })
+    };
+    useEffect(()=> getDream(), []);
+
+// Blogs 
+        const [blog,setBlog] = useState([]);
+
+        const getBlog =()=>{
+            axios.get('http://127.0.0.1:8000/blog/').then((response) =>{
+                const myData = response.data;
+                setBlog(myData)
+            })
+        };
+        useEffect(()=> getBlog(), []);
+
+// Notes
+        const [notes, setNote] = useState([])
+
+        const getNote = () =>{
+        axios.get('http://127.0.0.1:8000/note/')
+        .then(
+            (response) =>{
+            const myData = response.data;
+            // console.log(myData)
+            setNote(myData)
+            }
+        )
+        };
+        useEffect(() => getNote(), []);
+
+// News 
+const [news,setNews] = useState([]);
+    const getNews =()=>{
+        axios.get('http://127.0.0.1:8000/news/').then((response) =>{
+            const myData = response.data;
+            setNews(myData)
+        })
+    };
+    useEffect(()=> getNews(), []);
+
+// Course 
+
+    const [course,setCourse] = useState([]);
+    const getCourse =()=>{
+        axios.get('http://127.0.0.1:8000/course/').then((response) =>{
+            const myData = response.data;
+            setCourse(myData)
+        })
+    };
+    useEffect(()=> getCourse(), []);
+
     return (
         <>
             <Head>
@@ -154,80 +230,36 @@ export default function Landing() {
                         </div>
                     </IconContext.Provider>
 
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
-                    <button className='dream-btn' onClick={() => setBtn1(!btn1)}>ফ্রিল্যান্সিং কি?</button><br />
-                    {btn1 && (
-                        <>
-                            <br /><div className="popup-box transform">
-                                <div className="popupbox-content">
-                                    <h4 className='popupbox-title'>Information</h4>
-                                    <div className="popupbox-btn">
-                                        <button>Early Life</button>
-                                        <button>Education</button>
-                                        <button>Occupation</button>
-                                        <button>Known For</button>
-                                        <button>Personal Life</button>
-                                        <button>Achivement</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
-                    <button className='dream-btn' onClick={() => setBtn2(!btn2)}>ফ্রিল্যান্সিং ও বিশ্ব!</button><br />
-                    {btn2 && (
-                        <>
-                            <br /><div className="popup-box transform">
-                                <h4 className='popupbox-title'>Why Choose E-freelancing</h4>
-                                <div className="popupbox-btn">
-                                    <button></button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
-                    <button className='dream-btn' onClick={() => setBtn3(!btn3)}>ই-ফ্রিল্যান্সিং ডটকমের লক্ষ্য</button><br />
-                    {btn3 && (
-                        <>
-                            <br /><div className="popup-box transform">
-                                <h4 className='popupbox-title'>Plan</h4>
-                                <div className="popupbox-btn">
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
-                    <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
-                    <button className='dream-btn' onClick={() => setBtn3(!btn3)}>ই-ফ্রিল্যান্সিং ডটকমের মাধ্যমে কীভাবে আয় করবো</button><br />
-                    {btn3 && (
-                        <>
-                            <br /><div className="popup-box transform">
-                                <h4 className='popupbox-title'>Plan</h4>
-                                <div className="popupbox-btn">
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                    <button>Demo</button>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
+                    {DreamCategory.map((c,i)=>{
+                        return (
+                            <>
+                                <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                                <button className='dream-btn' onClick={() => setBtn1(!btn1)}>{c.name}</button><br />
+                                {btn1 && (
+                                    <>
+                                        <br /><div className="popup-box transform">
+                                            <div className="popupbox-content">
+                                                <h4 className='popupbox-title'>Information</h4>
+                                                <div className="popupbox-btn">
+                                                    {Dream.map((d, y) =>{
+                                                        return ( 
+                                                            <>
+                                                                {
+                                                                c.id == d.category? <button>{d.title}</button>: null
+                                                                }
+                                                                
+                                                            </>
+                                                        )
+                                                    })}
+                                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                            </>
+                        )
+                    })}
                     <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
                     <IconContext.Provider
                         value={{ color: 'white', size: '70px', marginTop: '20px' }}>
@@ -249,210 +281,93 @@ export default function Landing() {
                 <div className="latest-blog">
                     <h1 className='sec-title'>Latest Blog</h1>
                     <div class="latest-blog-container">
-                        <div class="card">
-                            <div class="card__header">
-                                <Image src="/blockchain-blog.jpeg" alt="card__image" class="card__image" width="1080" height="250" />
-                            </div>
-                            <div class="card__body">
-                                <h5 className='card-date'>January 15, 2023</h5>
-                                <h4 className='card-title'>What's new in 2022 Tech</h4>
-                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-                                <div className="tag-footer">
-                                    <span class="tag tag-purple">Technology</span>
-                                    <span class="tag tag-green">Technology</span>
-                                    <span class="tag tag-yellow">Technology</span>
+                        {blog.map((c,i)=>{
+                            return (
+                                <div class="card">
+                                <div class="card__header">
+                                    <Image src={c.image} alt="card__image" class="card__image" width="1080" height="250" />
+                                </div>
+                                <div class="card__body">
+                                    <h5 className='card-date'>{c.date}</h5>
+                                    <h4 className='card-title'>{c.title}</h4>
+                                    <p className='card-detail'><span dangerouslySetInnerHTML={{__html: c.description.slice(0, 200)}}></span><span><Link className='readmore-btn' href={`/blogs/${c.id}`} >Read More</Link></span> </p>
+                                    <div className="tag-footer">
+                                    {
+                                    c.tech_name1 == null? null: <span class="tag tag-purple">{c.tech_name1}</span>
+                                    }
+                                    {
+                                    c.tech_name2 == null? null: <span class="tag tag-yellow">{c.tech_name2}</span>
+                                    }
+                                    {
+                                    c.tech_name3 == null? null: <span class="tag tag-green">{c.tech_name3}</span>
+                                    }
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="card__header">
-                                <Image src="/thumbnail-thanks.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-                            </div>
-                            <div class="card__body">
-                                <h5 className='card-date'>January 15, 2023</h5>
-                                <h4 className='card-title'>What's new in 2022 Tech</h4>
-                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-                                <div className="tag-footer">
-                                    <span class="tag tag-green">Technology</span>
-                                    <span class="tag tag-yellow">Technology</span>
-                                    <span class="tag tag-purple">Technology</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card__header">
-                                <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-                            </div>
-                            <div class="card__body">
-                                <h5 className='card-date'>January 15, 2023</h5>
-                                <h4 className='card-title'>What's new in 2022 Tech</h4>
-                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-                                <div className="tag-footer">
-                                    <span class="tag tag-purple">Technology</span>
-                                    <span class="tag tag-yellow">Technology</span>
-                                    <span class="tag tag-green">Technology</span>
-                                </div>
-                            </div>
-                        </div>
+                            )
+                        })}
                     </div>
                 </div>
 
 
-                <div className="course mt-40">
-                    <h1 className='our-courses-title txt-center'>Visit Our Courses</h1>
-                    <div className="course-cards">
-                        <div className="course-card">
-                            <button className='offline-btn'>Offline</button>
-                            <div className="mx-40">
-                                <div className="course-title">
-                                    <div className="course-icon">
-                                        <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
-                                        <Image src="/ai.png" alt="card__image" width="33" height="33" />
-                                    </div>
-                                    <div className="course-name">
-                                        <h1>Graphic & <br /> Ui design</h1>
-                                    </div>
-                                </div>
-                                <div className="course-detail">
-                                    <div className="course-detail-content">
-                                        <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
-                                        <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
-                                        <h3>Classes: <span className='green-txt'>10</span></h3>
-                                        <h3>Seats left: <span className='green-txt'>10</span></h3>
-                                    </div>
-                                    <div className="view-course-btn">
-                                        <button className='visit-btn'>Visit Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="course-card">
-                            <button className='offline-btn'>Offline</button>
-                            <div className="mx-40">
-                                <div className="course-title">
-                                    <div className="course-icon">
-                                        <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
-                                        <Image src="/ai.png" alt="card__image" width="33" height="33" />
-                                    </div>
-                                    <div className="course-name">
-                                        <h1>Graphic & <br /> Ui design</h1>
-                                    </div>
-                                </div>
-                                <div className="course-detail">
-                                    <div className="course-detail-content">
-                                        <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
-                                        <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
-                                        <h3>Classes: <span className='green-txt'>10</span></h3>
-                                        <h3>Seats left: <span className='green-txt'>10</span></h3>
-                                    </div>
-                                    <div className="view-course-btn">
-                                        <button className='visit-btn'>Visit Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="course-card">
-                            <button className='offline-btn'>Offline</button>
-                            <div className="mx-40">
-                                <div className="course-title">
-                                    <div className="course-icon">
-                                        <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
-                                        <Image src="/ai.png" alt="card__image" width="33" height="33" />
-                                    </div>
-                                    <div className="course-name">
-                                        <h1>Graphic & <br /> Ui design</h1>
-                                    </div>
-                                </div>
-                                <div className="course-detail">
-                                    <div className="course-detail-content">
-                                        <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
-                                        <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
-                                        <h3>Classes: <span className='green-txt'>10</span></h3>
-                                        <h3>Seats left: <span className='green-txt'>10</span></h3>
-                                    </div>
-                                    <div className="view-course-btn">
-                                        <button className='visit-btn'>Visit Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="course-card">
-                            <button className='offline-btn'>Offline</button>
-                            <div className="mx-40">
-                                <div className="course-title">
-                                    <div className="course-icon">
-                                        <Image src="/ps.png" alt="card__image" width="33" height="33" /><br />
-                                        <Image src="/ai.png" alt="card__image" width="33" height="33" />
-                                    </div>
-                                    <div className="course-name">
-                                        <h1>Graphic & <br /> Ui design</h1>
-                                    </div>
-                                </div>
-                                <div className="course-detail">
-                                    <div className="course-detail-content">
-                                        <h3>Course: <span className='green-txt'>Graphic Design</span></h3>
-                                        <h3>Mentor: <span className='green-txt'>Rafsan Jany</span></h3>
-                                        <h3>Classes: <span className='green-txt'>10</span></h3>
-                                        <h3>Seats left: <span className='green-txt'>10</span></h3>
-                                    </div>
-                                    <div className="view-course-btn">
-                                        <br /><br /><br />
-                                        <button className='visit-btn'>Visit Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><br /><br /><br />
-                    </div>
-                    <div className="view-more-btn-container">
-                        <button class="view-more-btn" role="button">View More</button>
-                    </div>
-                </div>
+                <Container>
+                    <h1 className='sec-title'>Courses</h1>
+                    <Row>
+                        {course.map((c,i) =>{
+                            return (
+                                <Col xs={12} md={6} lg={4} className='my-3'>
+                                <Card>
+                                    <Card.Img variant="top" src={c.image} />
+                                    <Card.Body>
+                                        <Card.Title className='text-dark text-center'>{c.title}</Card.Title>
+                                        <Card.Text className='text-center'>                                            
+                                            <Badge pill bg="danger">
+                                            Total Class {c.total_class}
+                                            </Badge>{' '}
+                                            <Badge pill bg="success">
+                                            Duration {c.duration}
+                                            </Badge>{' '}
+                                        </Card.Text>
+                                        <div className='text-center'>
+                                        <a className='btn btn-warning' href={c.course_detail_link} target='_blank'>View Details</a>
+                                        </div>
+                                    </Card.Body>
+                                    </Card>
+                                </Col>
+                            )
+                        })}
+
+                    </Row>
+                </Container>
 
                 <div className="latest-blog">
                     <h1 className='sec-title'>Latest Notes</h1>
                     <div class="latest-notes-container">
+                    {notes.map((c,i) =>{
+                        return(
                         <div class="notes-card">
-                            <div class="card__header">
-                                <Image src="/blockchain-blog.jpeg" alt="card__image" class="card__image" width="1080" height="250" />
-                            </div>
-                            <div class="card__body">
-                                <h4 className='card-title'>What's new in 2022 Tech</h4>
-                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-                                <div className="tag-footer">
-                                    <span class="tag tag-purple">Technology</span>
-                                    <span class="tag tag-yellow">Technology</span>
-                                    <span class="tag tag-green">Technology</span>
-                                </div>
+                        <div class="card__header">
+                            <Image src={c.image} alt="card__image" class="card__image" width="1080" height="250" />
+                        </div>
+                        <div class="card__body">
+                            <h4 className='card-title'>{c.title}</h4>
+
+                            <p className='card-detail' ><span  dangerouslySetInnerHTML={{__html: c.description.slice(0, 200)}}></span>... <span><Link className='readmore-btn' href={`/notes/${c.id}`} >Read More</Link></span> </p>
+                            <div className="tag-footer">
+                            {
+                            c.tech_name1 == null? null: <span class="tag tag-purple">{c.tech_name1}</span>
+                            }
+                            {
+                            c.tech_name2 == null? null: <span class="tag tag-green">{c.tech_name2}</span>
+                            }
+                            {
+                            c.tech_name3 == null? null: <span class="tag tag-yellow">{c.tech_name3}</span>
+                            }
                             </div>
                         </div>
-                        <div class="notes-card">
-                            <div class="card__header">
-                                <Image src="/thumbnail-thanks.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-                            </div>
-                            <div class="card__body">
-                                <h4 className='card-title'>What's new in 2022 Tech</h4>
-                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-                                <div className="tag-footer">
-                                    <span class="tag tag-purple">Technology</span>
-                                    <span class="tag tag-yellow">Technology</span>
-                                    <span class="tag tag-green">Technology</span>
-                                </div>
-                            </div>
                         </div>
-                        <div class="notes-card">
-                            <div class="card__header">
-                                <Image src="/thumbnail-design.jpg" alt="card__image" class="card__image" width="1080" height="250" />
-                            </div>
-                            <div class="card__body">
-                                <h4 className='card-title'>What's new in 2022 Tech</h4>
-                                <p className='card-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-                                <div className="tag-footer">
-                                    <span class="tag tag-purple">Technology</span>
-                                    <span class="tag tag-yellow">Technology</span>
-                                    <span class="tag tag-green">Technology</span>
-                                </div>
-                            </div>
-                        </div>
+                        )
+                    })}
                     </div>
                     <div className="view-more-btn-container">
                         <button class="view-more-btn" role="button">View More</button>
@@ -492,36 +407,20 @@ export default function Landing() {
                 <div className="news-section">
                     <h1 className='news-section-title'>News & Update</h1>
                     <div class="news-container">
-                        <div class="news-card">
+                    {news.map((c,i) =>{
+                        return(
+                            <div class="news-card">
                             <div class="news_header">
-                                <Image src="/arfiusaldin-news.jpg" alt="news_image" class="news_image" width="400" height="250" />
+                                <Image src={c.image} alt="news_image" class="news_image" width="400" height="250" />
                             </div>
                             <div class="news_body">
-                                <h5 className='news-date'>January 15, 2023</h5>
-                                <h4 className='news-title'>What's new in 2022 Tech</h4>
-                                <p className='news-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
+                                <h5 className='news-date'>{c.date}</h5>
+                                <h4 className='news-title'>{c.title}</h4>
+                                <p className='news-detail'><span dangerouslySetInnerHTML={{__html: c.description.slice(0, 200)}}></span><span><Link className='readmore-btn'href={`/news/${c.id}`}>Read More</Link></span> </p>
                             </div>
                         </div>
-                        <div class="news-card">
-                            <div class="news_header">
-                                <Image src="/elon-mask.webp" alt="news_image" class="news_image" width="400" height="250" />
-                            </div>
-                            <div class="news_body">
-                                <h5 className='news-date'>January 15, 2023</h5>
-                                <h4 className='news-title'>What's new in 2022 Tech</h4>
-                                <p className='news-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-                            </div>
-                        </div>
-                        <div class="news-card">
-                            <div class="news_header">
-                                <Image src="/dollar.webp" alt="news_image" class="news_image" width="400" height="250" />
-                            </div>
-                            <div class="news_body">
-                                <h5 className='news-date'>January 15, 2023</h5>
-                                <h4 className='news-title'>What's new in 2022 Tech</h4>
-                                <p className='news-detail'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi... <span><Link className='readmore-btn' href={'https://www.labnol.org/'}>Read More</Link></span> </p>
-                            </div>
-                        </div>
+                        )
+                    })}
                     </div>
                 </div>
                 <footer>
@@ -531,7 +430,7 @@ export default function Landing() {
                             <div className="nav-side">
                                 <div className="about mb-20">
                                     <h2>About</h2>
-                                    <li className='footer-text'>Education</li>
+                                    <li><Link className='nav-link' href={'/education'}>Education</Link></li>
                                     <li className='footer-text'>Press and News</li>
                                     <li className='footer-text'>Privacy Policy</li>
                                     <li className='footer-text'>Terms of service</li>
