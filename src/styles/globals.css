@@ -39,7 +39,13 @@ body {
 ::placeholder {
   font-size: 17px;
 }
+.logo-link {
+  color: white;
+  text-decoration: none;
+}
+
 header {
+  z-index: 9999;
   color: white;
   display: flex;
   justify-content: space-around;
@@ -50,9 +56,6 @@ header {
   background-color: rgba(255, 255, 255, .15); 
   backdrop-filter: blur(12px);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
-main {
-  padding: 0px 50px;
 }
 .logo {
   font-size: 16px;
@@ -68,6 +71,8 @@ nav ul {
   display: flex;
 }
 .desk-nav .desk-ul li {
+  display: flex;
+  align-items: center;
   position: relative;
   margin-right: 40px;
   cursor: pointer;
@@ -190,13 +195,21 @@ nav ul li:hover::after {
   color: black;
   margin-right: 15px;
 }
+.know-btn-link {
+  color: black;
+  text-decoration: none;
+}
 .read-btn {
+  text-decoration: none;
   cursor: pointer;
   padding: 15px 30px;
   font-size: 17px;
   border-radius: 10px;
   border: 2px solid #ffffff;
   background: transparent;
+  color: #ffffff;
+}
+.read-btn-link {
   color: #ffffff;
 }
 .read-btn:hover {
@@ -229,6 +242,7 @@ nav ul li:hover::after {
   color: black;
   display: flex;
   flex-wrap: wrap;
+  z-index: -10;
   justify-content: center;
   margin-block: 2rem;
   gap: 4rem;
@@ -515,7 +529,6 @@ nav ul li:hover::after {
 /* BOOKS SECTION */
 .books-container {
   display: flex;
-  flex-wrap: wrap;
   width: 70%;
   margin: auto;
   justify-content: center;
@@ -543,12 +556,14 @@ nav ul li:hover::after {
   padding: 20px;
 }
 .buy-now-btn {
+  text-decoration: none;
   cursor: pointer;
   border-radius: 8px;
   background: #000000;
   color: white;
   border: none;
   font-size: 16px;
+  margin: 20px 0px;
   padding: 15px 30px;
 }
 .book-detail {
@@ -748,15 +763,16 @@ li {
 .talk-btn {
   font-size: 18px;
   border-radius: 20px;
-  border: 1px solid yellow;
-  color: yellow;
+  border: 1px solid white;
+  color: white !important;
+  text-decoration: none !important;
   background: transparent;
   padding: 15px 25px;
 }
 .talk-btn:hover {
   cursor: pointer;
-  background-color: yellow;
-  color: black;
+  background-color: white !important;
+  color: black !important;
   transition: 0.3s ease-in-out;
 }
 .social-media {
@@ -816,6 +832,7 @@ li {
 
 /* MOBILE NAV LINKS */
 .mobile-nav {
+  z-index: 99;
   text-align: center;
   display: none;
 }
@@ -879,6 +896,7 @@ li {
   background-color: #2642af;
 }
 .navigation-menu {
+  z-index: 99;
   transition: 2s ease;
   display: none;
 }
@@ -889,6 +907,49 @@ li {
 }
 
 
+/* DROPDOWN */
+.dropdown-container {
+  position: relative;
+}
+.dropdown-nav {
+  background-color: white;
+  padding: 0px 20px;
+  position: absolute;
+  margin-right: 15px;
+  border-radius: 10px;
+  display: none;
+}
+.dropdown-container:hover .dropdown-nav {
+  display: block;
+  transition: 0.2s;
+}
+.dropdown-nav li {
+  color: black !important;
+  margin-top: 20px;
+  margin-left: 20px !important;
+  margin-right: 0px !important;
+}
+.nav-link-dropdown {
+  color: black !important;
+  text-decoration: none;
+}
+
+/* SOCIAL MEDIA ICONS */
+.social-media-icons {
+  display: flex;
+  width: 20%;
+  margin: auto;
+  padding: 40px 0px;
+  justify-content: space-around;
+}
+
+.talk-btn-link {
+  color: yellow !important;
+  text-decoration: none !important;
+}
+.talk-btn-link:hover {
+  color: white !important;
+}
 
 @media (min-width: 768px) {
   .nav-btn {
@@ -907,6 +968,7 @@ li {
 }
 .mobile-navigation {
   display: none;
+  z-index: 99;
 }
 
 @media screen and (max-width: 767px) {
@@ -925,12 +987,16 @@ li {
     display: block !important;
   }
   .mobile-nav ul {
+    z-index: 99;
     position: fixed;
     transition: 5s ease;
     display: block !important;
   }
   .mobile-nav ul li {
     transition: 5s ease;
+  }
+  .latest-blog-container {
+    z-index: -10;
   }
   .down-icon {
     color: white !important;
@@ -964,12 +1030,20 @@ li {
     margin: auto;
     display: block;
   }
+  .course-cards {
+    width: 85%;
+  }
   .books-container {
+    flex-wrap: wrap;
     row-gap: 30px;
     width: 80%;
   }
   .buy-now-btn {
     padding: 15px 10px;
+  }
+  .buy-now-btn-link {
+    color: white !important;
+    text-decoration: none !important;
   }
   .news-container {
     grid-template-columns: 1fr;
@@ -989,13 +1063,44 @@ li {
   }
   .copyright {
     padding-top: 30px;
-    border-top: 2px solid white
+  }
+  .social-media-wraper {
+    width: 100%;
+    border-top: 2px solid white;
   }
   .social-media-icons {
     display: flex;
-    width: 45%;
+    width: 75%;
     margin: auto;
     padding: 40px 0px;
     justify-content: space-around;
+  }
+  .sub-email-inp {
+    width: 100%;
+  }
+  .view-more-btn-container{
+    width: 40%;
+  }
+  .books-container {
+    width: 100%;
+  }
+  .stories-container {
+    padding: 0px 40px;
+  }
+  .content-section {
+    width: 100%;
+  }
+  .stories-img {
+    width: 83% !important;
+    height: auto;
+  }
+  .stories-title {
+    margin-top: 50px;
+  }
+  .contact-inp {
+    width: 80%;
+  }
+  .contact-section {
+    height: 100vh;
   }
 }

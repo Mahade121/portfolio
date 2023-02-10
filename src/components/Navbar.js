@@ -10,7 +10,7 @@ const Navbar = () => {
         <div>
             <header>
                 <div className="logo">
-                    <h1>Arfius Al-din</h1>
+                    <h1><Link href={'/home'} className="logo-link">Arfius Al din</Link></h1>
                 </div>
                 <div className="desktop-navigation">
                     <nav className='desk-nav'>
@@ -21,12 +21,32 @@ const Navbar = () => {
                             <li><Link className='nav-link' href={'/blogs'}>Blogs</Link></li>
                             <li><Link className='nav-link' href={'/news'}>News</Link></li>
                             <li><Link className='nav-link' href={'/contact'}>Contact</Link></li>
+                            <div className="dropdown-container">
                             <li className='dropdown'><span className='more'>More</span> <IconContext.Provider
+                                value={{ color: 'white', size: '17px', marginTop: '5px' }}>
+                                <div className='down-icon'>
+                                    <BsChevronDown />
+                                </div>
+                            </IconContext.Provider></li>
+                            <div className="dropdown-nav">
+                                <li><Link className='nav-link-dropdown' href={'/books'}>Education</Link></li>
+                                <li><Link className='nav-link-dropdown' href={'/news'}>Press and News</Link></li>
+                                <li><Link className='nav-link-dropdown' href={'/contact'}>Privacy Policy</Link></li>
+                                <li><Link className='nav-link-dropdown' href={'/contact'}>Terms of Service</Link></li><br />
+                            </div>
+                        </div>
+                            {/* <li className='dropdown'><span className='more'>More</span> <IconContext.Provider
                                 value={{ color: 'white', size: '17px', marginTop: '5px', cursor: 'pointer' }}>
                                 <div className='down-icon'>
                                     <BsChevronDown />
                                 </div>
                             </IconContext.Provider></li>
+                            <div className="dropdown-nav">
+                                <li><Link className='nav-link-dropdown' href={'/books'}>Education</Link></li>
+                                <li><Link className='nav-link-dropdown' href={'/news'}>Press and News</Link></li>
+                                <li><Link className='nav-link-dropdown' href={'/contact'}>Privacy Policy</Link></li>
+                                <li><Link className='nav-link-dropdown' href={'/contact'}>Terms of Service</Link></li><br />
+                            </div> */}
                         </ul>
                     </nav>
                     <div className='search-input'>
@@ -59,7 +79,7 @@ const Navbar = () => {
                     <li><Link className='ph-nav-link' href={'/home'}>Home</Link></li><br />
                     <li><Link className='ph-nav-link' href={'/stories'}>Stories</Link></li><br />
                     <li><Link className='ph-nav-link' href={'/notes'}>Notes</Link></li><br />
-                    <li><Link className='ph-nav-link' href={'/books'}>Blogs</Link></li><br />
+                    <li><Link className='ph-nav-link' href={'/blogs'}>Blogs</Link></li><br />
                     <li><Link className='ph-nav-link' href={'/news'}>News</Link></li><br />
                     <li><Link className='ph-nav-link' href={'/contact'}>Contact</Link></li><br />
                     <li className='dropdown'><span className='more'>More</span> <IconContext.Provider

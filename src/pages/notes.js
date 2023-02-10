@@ -55,8 +55,8 @@ export default function Notes() {
           })}
         </div>
         <div className="view-more-btn-container">
-          <button class="view-more-btn" role="button">View More</button><br /><br /><br />
-        </div>
+                            <Link className="view-more-btn" href={'/blogs'}>View More</Link>
+                        </div>
       </div>
     </div>
   )

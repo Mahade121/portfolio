@@ -13,6 +13,7 @@ import { FaFacebookF } from 'react-icons/fa';
 import { BsInstagram } from 'react-icons/bs';
 import { FiLinkedin } from 'react-icons/fi';
 import { BsYoutube } from 'react-icons/bs';
+import { BsTwitter } from 'react-icons/bs';
 
 import {
     Chart as ChartJS,
@@ -138,8 +139,8 @@ export default function Landing() {
                             />
                         </div>
                         <div className="btn-container">
-                            <button className='know-btn'>Know More</button>
-                            <button className='read-btn'>Read Blogs</button>
+                            <button className='know-btn'><Link href={'/stories'} className="know-btn-link">Know More</Link></button>
+                            <Link href={'/blogs'} className="read-btn">Read Blogs</Link>
                         </div>
                     </div>
                 </div>
@@ -293,6 +294,9 @@ export default function Landing() {
                                     <span class="tag tag-green">Technology</span>
                                 </div>
                             </div>
+                        </div>
+                        <div className="view-more-btn-container">
+                            <Link className="view-more-btn" href={'/blogs'}>View More</Link>
                         </div>
                     </div>
                 </div>
@@ -453,9 +457,9 @@ export default function Landing() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="view-more-btn-container">
-                        <button class="view-more-btn" role="button">View More</button>
+                        <div className="view-more-btn-container">
+                            <Link className="view-more-btn" href={'/notes'}>View More</Link>
+                        </div>
                     </div>
                 </div>
 
@@ -467,22 +471,22 @@ export default function Landing() {
                                 <Image src="/book1.webp" alt="book_image" class="book_image" width="400" height="400" />
                             </div>
                             <div className="book-body">
-                                <h4 className="book-title">Amusing Graphic Design Handbook</h4><br />
-                                <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p><br />
+                                <h4 className="book-title">Amusing Graphic Design Handbook</h4>
+                                <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p>
                                 <div className="buy-now-btn-wraper">
-                                    <button className="buy-now-btn">Buy Now</button>
+                                    <Link className='buy-now-btn' href={'https://www.amazon.com/Amusing-Graphic-Design-Handbook-Arfius/dp/B09J7Q64SQ/ref=sr_1_1?qid=1676026361&refinements=p_27%3AArfius+Al-din&s=books&sr=1-1'} target="_blank">Buy Now</Link>
                                 </div>
                             </div>
                         </div>
                         <div className="book-card">
                             <div className="book-header">
-                                <Image src="/book1.webp" alt="book_image" class="book_image" width="400" height="400" />
+                                <Image src="/inspiring-book.jpg" alt="book_image" class="book_image" width="400" height="400" />
                             </div>
                             <div className="book-body">
-                                <h4 className="book-title">Amusing Graphic Design Handbook</h4><br />
-                                <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p><br />
+                                <h4 className="book-title">Amusing Graphic Design Handbook</h4>
+                                <p className="book-detail">Amusing Graphic Design Handbook Arfius Al-din Arfius Al-din on Amazon.com. *FREE* shipping on qualifying offers</p>
                                 <div className="buy-now-btn-wraper">
-                                    <button className="buy-now-btn">Buy Now</button>
+                                    <Link className='buy-now-btn' href={'https://www.amazon.com/Inspiring-Delightful-Mandala-Design-Arfius-Al-din/dp/B09HR59VSM/ref=sr_1_2?qid=1676026361&refinements=p_27%3AArfius+Al-din&s=books&sr=1-2'} target="_blank">Buy Now</Link>
                                 </div>
                             </div>
                         </div>
@@ -523,9 +527,12 @@ export default function Landing() {
                             </div>
                         </div>
                     </div>
+                    <div className="text-center">
+                            <Link className="btn btn-light" href={'/news'}>View More</Link>
+                    </div>
                 </div>
                 <footer>
-                    <button className='talk-btn'>Let's Talk</button>
+                    <Link href={'/contact'} className="talk-btn">Let's Talk</Link>
                     <div className="footer-middle">
                         <div className="social-media">
                             <div className="nav-side">
@@ -559,34 +566,37 @@ export default function Landing() {
                             </form>
                         </div>
                     </div>
-                    <div className="social-media-icons">
-                        <IconContext.Provider value={{ color: 'white', size: '30px' }}>
-                            <div className="social-icon">
-                                <FaFacebookF />
-                            </div>
-                        </IconContext.Provider>
-                        <IconContext.Provider value={{ color: 'white', size: '30px' }}>
-                            <div className="social-icon">
-                                <BsInstagram />
-                            </div>
-                        </IconContext.Provider>
-                        <IconContext.Provider value={{ color: 'white', size: '30px' }}>
-                            <div className="social-icon">
-                                <div className="social-icon">
-                                <FiLinkedin />
-                                </div>
-                            </div>
-                        </IconContext.Provider>
-                        <IconContext.Provider value={{ color: 'white', size: '30px' }}>
-                            <div className="social-icon">
-                                <div className="social-icon">
-                                <BsYoutube />
-                                </div>
-                            </div>
-                        </IconContext.Provider>
+                    <div className="social-media-wraper">
+                        <div className="social-media-icons">
+                            <IconContext.Provider value={{ color: 'white', size: '30px' }}>
+                                <Link className="social-icon" href={'https://www.facebook.com/IamArfius'} target="_blank">
+                                    <FaFacebookF />
+                                </Link>
+                            </IconContext.Provider>
+                            <IconContext.Provider value={{ color: 'white', size: '30px' }}>
+                                <Link className="social-icon" href={'https://www.instagram.com/arfiusaldin/'} target="_blank">
+                                    <BsInstagram />
+                                </Link>
+                            </IconContext.Provider>
+                            <IconContext.Provider value={{ color: 'white', size: '30px' }}>
+                                <Link className="social-icon" href={'https://www.linkedin.com/in/arfiusaldin/'} target="_blank">
+                                    <FiLinkedin />
+                                </Link>
+                            </IconContext.Provider>
+                            <IconContext.Provider value={{ color: 'white', size: '30px' }}>
+                                <Link className="social-icon" href={'https://www.youtube.com/@ArfiusAldin?sub_confirmation=1'} target="_blank">
+                                    <BsYoutube />
+                                </Link>
+                            </IconContext.Provider>
+                            <IconContext.Provider value={{ color: 'white', size: '30px' }}>
+                                <Link className="social-icon" href={'https://twitter.com/arfiusaldin'} target="_blank">
+                                    <BsTwitter />
+                                </Link>
+                            </IconContext.Provider>
+                        </div>
                     </div><br /><br />
                     <div className="copyright">
-                        <p>©2023 arfiusaldin.com ALL Rights Reserved</p>
+                        <p>©2023 Arfius Super Technology ALL Rights Reserved</p>
                     </div>
                 </footer>
             </main>
