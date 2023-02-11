@@ -105,6 +105,11 @@ export default function Landing() {
     const [btn1, setBtn1] = useState(false);
     const [btn2, setBtn2] = useState(false);
     const [btn3, setBtn3] = useState(false);
+    const [btn4, setBtn4] = useState(false);
+    const [btn5, setBtn5] = useState(false);
+    const [btn6, setBtn6] = useState(false);
+    const [btn7, setBtn7] = useState(false);
+    const [btn8, setBtn8] = useState(false);
 
 
     const form = useRef();
@@ -234,7 +239,10 @@ const [news,setNews] = useState([]);
                     {DreamCategory.map((c,i)=>{
                         return (
                             <>
-                                <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                            {
+                            c.id == 1?
+                            <>
+                            <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
                                 <button className='dream-btn' onClick={() => setBtn1(!btn1)}>{c.name}</button><br />
                                 {btn1 && (
                                     <>
@@ -258,6 +266,199 @@ const [news,setNews] = useState([]);
                                         </div>
                                     </>
                                 )}
+                            </>
+                            :c.id==2?
+                            <>
+                            <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                                <button className='dream-btn' onClick={() => setBtn2(!btn2)}>{c.name}</button><br />
+                                {btn2 && (
+                                    <>
+                                        <br /><div className="popup-box transform">
+                                            <div className="popupbox-content">
+                                                <h4 className='popupbox-title'>Information</h4>
+                                                <div className="popupbox-btn">
+                                                    {Dream.map((d, y) =>{
+                                                        return ( 
+                                                            <>
+                                                                {
+                                                                c.id == d.category? <button>{d.title}</button>: null
+                                                                }
+                                                                
+                                                            </>
+                                                        )
+                                                    })}
+                                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                            </>
+                            :c.id == 3?
+                            <>
+                            <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                                <button className='dream-btn' onClick={() => setBtn3(!btn3)}>{c.name}</button><br />
+                                {btn3 && (
+                                    <>
+                                        <br /><div className="popup-box transform">
+                                            <div className="popupbox-content">
+                                                <h4 className='popupbox-title'>Information</h4>
+                                                <div className="popupbox-btn">
+                                                    {Dream.map((d, y) =>{
+                                                        return ( 
+                                                            <>
+                                                                {
+                                                                c.id == d.category? <button>{d.title}</button>: null
+                                                                }
+                                                                
+                                                            </>
+                                                        )
+                                                    })}
+                                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                            </>
+                            :c.id == 4?
+                            <>
+                            <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                                <button className='dream-btn' onClick={() => setBtn4(!btn4)}>{c.name}</button><br />
+                                {btn4 && (
+                                    <>
+                                        <br /><div className="popup-box transform">
+                                            <div className="popupbox-content">
+                                                <h4 className='popupbox-title'>Information</h4>
+                                                <div className="popupbox-btn">
+                                                    {Dream.map((d, y) =>{
+                                                        return ( 
+                                                            <>
+                                                                {
+                                                                c.id == d.category? <button>{d.title}</button>: null
+                                                                }
+                                                                
+                                                            </>
+                                                        )
+                                                    })}
+                                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                            </>
+                            :c.id == 5?
+                            <>
+                            <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                                <button className='dream-btn' onClick={() => setBtn5(!btn5)}>{c.name}</button><br />
+                                {btn5 && (
+                                    <>
+                                        <br /><div className="popup-box transform">
+                                            <div className="popupbox-content">
+                                                <h4 className='popupbox-title'>Information</h4>
+                                                <div className="popupbox-btn">
+                                                    {Dream.map((d, y) =>{
+                                                        return ( 
+                                                            <>
+                                                                {
+                                                                c.id == d.category? <button>{d.title}</button>: null
+                                                                }
+                                                                
+                                                            </>
+                                                        )
+                                                    })}
+                                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                            </>
+                            :c.id == 6?
+                            <>
+                            <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                                <button className='dream-btn' onClick={() => setBtn6(!btn6)}>{c.name}</button><br />
+                                {btn6 && (
+                                    <>
+                                        <br /><div className="popup-box transform">
+                                            <div className="popupbox-content">
+                                                <h4 className='popupbox-title'>Information</h4>
+                                                <div className="popupbox-btn">
+                                                    {Dream.map((d, y) =>{
+                                                        return ( 
+                                                            <>
+                                                                {
+                                                                c.id == d.category? <button>{d.title}</button>: null
+                                                                }
+                                                                
+                                                            </>
+                                                        )
+                                                    })}
+                                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                            </>
+                            :c.id == 7?
+                            <>
+                            <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                                <button className='dream-btn' onClick={() => setBtn7(!btn7)}>{c.name}</button><br />
+                                {btn7 && (
+                                    <>
+                                        <br /><div className="popup-box transform">
+                                            <div className="popupbox-content">
+                                                <h4 className='popupbox-title'>Information</h4>
+                                                <div className="popupbox-btn">
+                                                    {Dream.map((d, y) =>{
+                                                        return ( 
+                                                            <>
+                                                                {
+                                                                c.id == d.category? <button>{d.title}</button>: null
+                                                                }
+                                                                
+                                                            </>
+                                                        )
+                                                    })}
+                                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                            </>
+                            :c.id == 8?
+                            <>
+                            <Image src="/arrow.png" alt="arrow" className="arrow" width="36" height="130" /><br />
+                                <button className='dream-btn' onClick={() => setBtn8(!btn8)}>{c.name}</button><br />
+                                {btn8 && (
+                                    <>
+                                        <br /><div className="popup-box transform">
+                                            <div className="popupbox-content">
+                                                <h4 className='popupbox-title'>Information</h4>
+                                                <div className="popupbox-btn">
+                                                    {Dream.map((d, y) =>{
+                                                        return ( 
+                                                            <>
+                                                                {
+                                                                c.id == d.category? <button>{d.title}</button>: null
+                                                                }
+                                                                
+                                                            </>
+                                                        )
+                                                    })}
+                                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                            </>
+                            :null
+                            }
+
                             </>
                         )
                     })}
@@ -439,9 +640,9 @@ const [news,setNews] = useState([]);
                                 <div className="about mb-20">
                                     <h2>About</h2>
                                     <li><Link className='nav-link' href={'/education'}>Education</Link></li>
-                                    <li className='footer-text'>Press and News</li>
-                                    <li className='footer-text'>Privacy Policy</li>
-                                    <li className='footer-text'>Terms of service</li>
+                                    <li className='footer-text'><Link className='nav-link' href={'/news'}>Press and News</Link></li>
+                                    <li className='footer-text'><Link className='nav-link' href={'/privacypoicy'}>Privacy Policy</Link></li>
+                                    <li className='footer-text'><Link className='nav-link' href={'/termsOfService'}>Terms of service</Link></li>
                                 </div>
                                 <div className="community">
                                     <h2>Community</h2>

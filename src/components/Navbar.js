@@ -1,11 +1,39 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IconContext } from 'react-icons';
 import { BsChevronDown } from 'react-icons/bs';
 import { FaBars } from 'react-icons/fa';
 
+
+
+
 const Navbar = () => {
     const [isNavExpanded, setIsNavExpanded] = useState(false);
+
+    const [input, setInput] = useState("");
+    const [results, setResults] = useState([]);
+  
+    useEffect(() => {
+      const urls = [
+        "http://127.0.0.1:8000/blog/",
+      ];
+  
+      Promise.all(
+        urls.map((url) =>
+          fetch(url)
+            .then((response) => response.json())
+            .then((data) => setResults(data))
+            .catch((error) => console.log("There was a problem!", error))
+        ),
+        []
+      );
+    }, []);
+  
+    const handleChange = (e) => {
+      e.preventDefault();
+      setInput(e.target.value.toLowerCase());
+    };
+  
     return (
         <div>
             <header>
@@ -29,10 +57,10 @@ const Navbar = () => {
                                 </div>
                             </IconContext.Provider></li>
                             <div className="dropdown-nav">
-                                <li><Link className='nav-link-dropdown' href={'/books'}>Education</Link></li>
+                                <li><Link className='nav-link-dropdown' href={'/education'}>Education</Link></li>
                                 <li><Link className='nav-link-dropdown' href={'/news'}>Press and News</Link></li>
-                                <li><Link className='nav-link-dropdown' href={'/contact'}>Privacy Policy</Link></li>
-                                <li><Link className='nav-link-dropdown' href={'/contact'}>Terms of Service</Link></li><br />
+                                <li><Link className='nav-link-dropdown' href={'/privacypoicy'}>Privacy Policy</Link></li>
+                                <li><Link className='nav-link-dropdown' href={'/termsOfService'}>Terms of Service</Link></li><br />
                             </div>
                         </div>
                             {/* <li className='dropdown'><span className='more'>More</span> <IconContext.Provider
@@ -50,7 +78,34 @@ const Navbar = () => {
                         </ul>
                     </nav>
                     <div className='search-input'>
-                        <input type="text" placeholder='search here...' className='search' />
+                    <div className="dropdown-container">
+                            <li className='dropdown'>
+                            <input
+                                type="text"
+                                name="query"
+                                value={input}
+                                id="search"
+                                className='form-control'
+                                placeholder="search blogs"
+                                onChange={handleChange}
+                                />
+                                </li>
+                            <div className="dropdown-nav">
+                            
+                            {results.slice(0, 15)
+                                .filter((i) =>
+                                i.title.toLowerCase().includes(input))
+                                .map((result, index) => {
+                                    return (
+
+                                    <div className="results" key={index}>
+                                        <li><Link className='nav-link-dropdown' href={`/blogs/${result.id}`}>{result.title}</Link></li>
+                                    </div>
+                                    );
+                                })}
+                                        
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="mobile-navigation">

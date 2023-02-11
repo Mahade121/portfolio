@@ -28,7 +28,7 @@ class ContactApi(generics.CreateAPIView):
     serializer_class = ContactSerializer
 
 class DreamCategoryApi(ReadOnlyModelViewSet):
-    queryset = DreamCategory.objects.all().order_by('-id')
+    queryset = DreamCategory.objects.all()
     serializer_class = DreamCategorySerializer
 
 class DreamApi(ReadOnlyModelViewSet):
